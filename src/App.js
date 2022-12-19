@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import ItemListContainer from './componentes/itemListCont';
+import BarraNav from './componentes/Navbar'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BarraNav/>
+      <ItemListContainer text="Bienvenido A Rescue Store"/>
     </div>
-  );
+  )
 }
 
 export default App;
