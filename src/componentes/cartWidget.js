@@ -4,7 +4,7 @@ function CartLogo() {
     return (
         <div className="container d-flex cart">
             <img
-                src="../cart.svg"
+                src="./cart.svg"
                 width="30"
                 height="30"
                 className="d-inline-block align-center"

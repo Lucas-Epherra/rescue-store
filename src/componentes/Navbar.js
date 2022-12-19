@@ -12,7 +12,7 @@ function BarraNav() {
             <Container>
                 <Navbar.Brand href="#home">
                     <div className='d-flex'><img
-                        src="../logo.png"
+                        src="./logo.png"
                         width="50"
                         height="50"
                         className="d-inline-block align-top rounded-5"
