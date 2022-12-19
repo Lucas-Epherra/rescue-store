@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/Rescue-Store/static/css/main.3c960ec7.css",
-    "main.js": "/Rescue-Store/static/js/main.768be008.js",
+    "main.js": "/Rescue-Store/static/js/main.9d7ba64b.js",
+    "static/media/logo.png": "/Rescue-Store/static/media/logo.f1d1b01127183f5211ea.png",
+    "static/media/cart.svg": "/Rescue-Store/static/media/cart.ec34e04f278866298777c9836305a693.svg",
     "index.html": "/Rescue-Store/index.html",
     "main.3c960ec7.css.map": "/Rescue-Store/static/css/main.3c960ec7.css.map",
-    "main.768be008.js.map": "/Rescue-Store/static/js/main.768be008.js.map"
+    "main.9d7ba64b.js.map": "/Rescue-Store/static/js/main.9d7ba64b.js.map"
   },
   "entrypoints": [
     "static/css/main.3c960ec7.css",
-    "static/js/main.768be008.js"
+    "static/js/main.9d7ba64b.js"
   ]
 }
