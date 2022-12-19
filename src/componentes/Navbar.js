@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartLogo from '../componentes/cartWidget';
+import logo from '../../public/logo.png';
 import './myNav.css';
 
 
@@ -12,7 +13,7 @@ function BarraNav() {
             <Container>
                 <Navbar.Brand href="#home">
                     <div className='d-flex'><img
-                        src="./logo.png"
+                        src={logo}
                         width="50"
                         height="50"
                         className="d-inline-block align-top rounded-5"
