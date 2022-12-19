@@ -10,7 +10,7 @@ import './myNav.css';
 function BarraNav() {
     return (
         <Navbar bg="danger" variant="danger">
-            <Container>
+            <Container className='container'>
                 <Navbar.Brand href="#home">
                     <div className='d-flex'><img
                         src={logo}
