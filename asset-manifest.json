@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Rescue-Store/static/css/main.3c960ec7.css",
+    "main.js": "/Rescue-Store/static/js/main.323fc6bb.js",
+    "index.html": "/Rescue-Store/index.html",
+    "main.3c960ec7.css.map": "/Rescue-Store/static/css/main.3c960ec7.css.map",
+    "main.323fc6bb.js.map": "/Rescue-Store/static/js/main.323fc6bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c960ec7.css",
+    "static/js/main.323fc6bb.js"
+  ]
+}
