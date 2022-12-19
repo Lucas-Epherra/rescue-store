@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Rescue-Store/static/css/main.3c960ec7.css",
-    "main.js": "/Rescue-Store/static/js/main.e9c14c40.js",
+    "main.js": "/Rescue-Store/static/js/main.768be008.js",
     "index.html": "/Rescue-Store/index.html",
     "main.3c960ec7.css.map": "/Rescue-Store/static/css/main.3c960ec7.css.map",
-    "main.e9c14c40.js.map": "/Rescue-Store/static/js/main.e9c14c40.js.map"
+    "main.768be008.js.map": "/Rescue-Store/static/js/main.768be008.js.map"
   },
   "entrypoints": [
     "static/css/main.3c960ec7.css",
-    "static/js/main.e9c14c40.js"
+    "static/js/main.768be008.js"
   ]
 }
