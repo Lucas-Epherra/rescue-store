@@ -1,5 +1,5 @@
 import './cart.css';
-import cart from '../public/cart.svg'
+import cart from '../assets/cart.svg'
 
 function CartLogo() {
     return (
