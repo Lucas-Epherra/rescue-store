@@ -1,10 +1,11 @@
-import ItemListContainer from './componentes/itemListCont';
-import BarraNav from './componentes/Navbar'
+import './app.css'
+import ItemListContainer from './componentes/itemListContainer/itemListContainer';
+import NavbarWidget from './componentes/navbar/Navbar'
 
 function App() {
   return (
-    <div>
-      <BarraNav/>
+    <div className='contMain'>
+      <NavbarWidget/>
       <ItemListContainer text="Bienvenido A Rescue Store"/>
     </div>
   )

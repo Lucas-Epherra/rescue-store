@@ -1,13 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import CartLogo from '../componentes/cartWidget';
-import logo from '../assets/logo.png';
-import './myNav.css';
+import CartWidget from './cart/cartWidget';
+import logo from '../../assets/logo.png';
+import './navbar.css';
 
 
 
-function BarraNav() {
+function NavbarWidget() {
     return (
         <Navbar bg="danger" variant="danger" className='navbar'>
             <Container className='container'>
@@ -25,7 +25,7 @@ function BarraNav() {
                 <Nav>
                     <Nav.Link className='links' href="#inicio">Inicio</Nav.Link>
                     <Nav.Link className='links' href="#productos">Productos</Nav.Link>
-                    <CartLogo />
+                    <CartWidget />
                 </Nav>
             </Container>
             
@@ -33,4 +33,4 @@ function BarraNav() {
     );
 }
 
-export default BarraNav;
+export default NavbarWidget;

@@ -1,7 +1,7 @@
 import './cart.css';
-import cart from '../assets/cart.svg'
+import cart from '../../../assets/cart.svg'
 
-function CartLogo() {
+function CartWidget() {
     return (
         <div className="d-flex cart">
             <img
@@ -16,4 +16,4 @@ function CartLogo() {
     );
 }
 
-export default CartLogo;
+export default CartWidget;
