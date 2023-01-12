@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/Rescue-Store/static/css/main.4f724987.css",
-    "main.js": "/Rescue-Store/static/js/main.01db242b.js",
+    "main.css": "/Rescue-Store/static/css/main.11e097a5.css",
+    "main.js": "/Rescue-Store/static/js/main.97167580.js",
     "static/media/logo.png": "/Rescue-Store/static/media/logo.f1d1b01127183f5211ea.png",
+    "static/media/imagenTwo.jpg": "/Rescue-Store/static/media/imagenTwo.1b699a3f1e9a20de4bb5.jpg",
+    "static/media/imagenOne.jpg": "/Rescue-Store/static/media/imagenOne.f8ae23073bb3071421d8.jpg",
+    "static/media/imagenThree.jpg": "/Rescue-Store/static/media/imagenThree.9aa60cfe6518c21e8cff.jpg",
     "static/media/cart.svg": "/Rescue-Store/static/media/cart.ec34e04f278866298777c9836305a693.svg",
     "index.html": "/Rescue-Store/index.html",
-    "main.4f724987.css.map": "/Rescue-Store/static/css/main.4f724987.css.map",
-    "main.01db242b.js.map": "/Rescue-Store/static/js/main.01db242b.js.map"
+    "main.11e097a5.css.map": "/Rescue-Store/static/css/main.11e097a5.css.map",
+    "main.97167580.js.map": "/Rescue-Store/static/js/main.97167580.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f724987.css",
-    "static/js/main.01db242b.js"
+    "static/css/main.11e097a5.css",
+    "static/js/main.97167580.js"
   ]
 }
