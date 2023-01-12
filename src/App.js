@@ -1,16 +1,30 @@
+import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
+import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
+import NavbarWidget from './componentes/navbar/NavarWidget'
+import { BrowserRouter , Routes , Route } from 'react-router-dom';
 import './app.css'
-import ItemDetailContainer from './componentes/itemDetailContainer/itemDetailContainer';
-import ItemListContainer from './componentes/itemListContainer/itemListContainer';
-import NavbarWidget from './componentes/navbar/Navbar'
+
 
 function App() {
+
   return (
-    <div className='contMain'>
+   
+    <BrowserRouter>
+    
       <NavbarWidget/>
-      <ItemListContainer text="Bienvenido A Rescue Store"/>
-      {/* <ItemDetailContainer itemId={10}/> */}
+
+      <Routes>
+
+        <Route path='/' element={<ItemListContainer />}/>
+        <Route path='/productos' element={<ItemListContainer />}/>
+        <Route path='/productos/:categoryId' element={<ItemListContainer />}/>
+        <Route path='/detalle/:itemId' element={<ItemDetailContainer/>}/>
+        
+      </Routes>
+
+    </BrowserRouter>
+
       
-    </div>
   )
 }
 

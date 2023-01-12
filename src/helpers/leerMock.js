@@ -8,17 +8,20 @@ export const leerMock = () => {
 
     setTimeout(() => {
       resolve(items)
-    }, 3000)
+    }, 500)
 
   })
 }
 
+
 export const pedirItemPorId = (id) => {
+
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
+    
+    setTimeout( () => {
       const item = items.find((el) => el.id === id)
 
       resolve(item)
-    }, 2000)
+    }, 500)
   })
 }

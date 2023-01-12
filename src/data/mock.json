@@ -3,7 +3,7 @@
     "id": 1,
     "marca": "Fox",
     "modelo": "Epik",
-    "categoria": "Silbatos",
+    "categoria": "silbatos",
     "precio": "2500",
     "stock":"20",
     "imagen": "https://i.postimg.cc/MpShxz38/product1.png",
@@ -13,7 +13,7 @@
     "id": 2,
     "marca": "Fox",
     "modelo": "Sonik",
-    "categoria": "Silbatos",
+    "categoria": "silbatos",
     "precio": "3500",
     "stock":"20",
     "imagen": "https://i.postimg.cc/N01FFGB7/product2.png",
@@ -23,7 +23,7 @@
     "id": 3,
     "marca": "Fox",
     "modelo": "Sonik",
-    "categoria": "Silbatos",
+    "categoria": "silbatos",
     "precio": "3500",
     "stock":"20",
     "imagen": "https://i.postimg.cc/QCqcTkDm/product3.png",
@@ -33,7 +33,7 @@
     "id": 4,
     "marca": "Fox",
     "modelo": "Classic",
-    "categoria": "Silbatos",
+    "categoria": "silbatos",
     "precio": "4500",
     "stock":"20",
     "imagen": "https://i.postimg.cc/T2n0xgzp/product4.png",
@@ -43,7 +43,7 @@
     "id": 5,
     "marca": "Fox",
     "modelo": "Classic",
-    "categoria": "Silbatos",
+    "categoria": "silbatos",
     "precio": "4500",
     "stock":"20",
     "imagen": "https://i.postimg.cc/rs9wJfKd/product5.png",
@@ -117,7 +117,7 @@
     "precio": "2500",
     "stock":"20",
     "imagen": "https://i.postimg.cc/15jrcB67/product12.png",
-    "name":"Visera Lifeguard"
+    "name":"Visera Plana Lifeguard"
   },
   {
     "id": 13,
@@ -147,7 +147,7 @@
     "precio": "9000",
     "stock":"20",
     "imagen": "https://i.postimg.cc/GpYKpD47/product15.png",
-    "name":"Australiano LifeguardPro"
+    "name":"Australiano Lifeguard"
   },
   {
     "id": 16,
@@ -157,7 +157,7 @@
     "precio": "12000",
     "stock":"20",
     "imagen": "https://i.postimg.cc/JhWJP2hx/product16.png",
-    "name":"Binocular Luzbee"
+    "name":"Binoculares Luzbee"
   },
   {
     "id": 17,
@@ -167,7 +167,7 @@
     "precio": "16000",
     "stock":"20",
     "imagen": "https://i.postimg.cc/PJN8CG6X/product17.png",
-    "name":"Binocular Gammo"
+    "name":"Binoculares Gammo"
   },
   {
     "id": 18,
@@ -177,7 +177,7 @@
     "precio": "21000",
     "stock":"20",
     "imagen": "https://i.postimg.cc/XY6pby07/product18.png",
-    "name":"Binocular Olympus"
+    "name":"Binoculares Olympus"
   },
   {
     "id": 19,
@@ -187,7 +187,7 @@
     "precio": "24000",
     "stock":"20",
     "imagen": "https://i.postimg.cc/q7LtQBSB/product19.png",
-    "name":"Binocular Baskall"
+    "name":"Binoculares Baskall"
   },
   {
     "id": 20,
@@ -197,6 +197,6 @@
     "precio": "30000",
     "stock":"20",
     "imagen": "https://i.postimg.cc/HsyVR9Rh/product20.png",
-    "name":"Binocular Nikon"
+    "name":"Binoculares Nikon"
   }
 ]

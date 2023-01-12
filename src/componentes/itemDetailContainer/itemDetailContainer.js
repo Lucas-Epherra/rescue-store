@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
-import { pedirItemPorId } from '../../helpers/leerMock'
-import ItemDetail from "../itemDetail/itemDetail"
+import { useParams } from "react-router-dom"
+import { leerMock, pedirItemPorId } from '../../helpers/leerMock'
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 
-const ItemDetailContainer = ({ itemId }) => {
+const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
-    console.log(item)
+
+    const { itemId } = useParams()
 
     useEffect(() => {
-        pedirItemPorId(itemId)
+        pedirItemPorId( Number (itemId) )
             .then((data) => {
                 setItem(data)
             })

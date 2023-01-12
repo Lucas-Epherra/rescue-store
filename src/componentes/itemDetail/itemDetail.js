@@ -1,13 +1,16 @@
+import './itemDetail.css';
 
-const ItemDetail = (name,marca,modelo,categoria,image,precio,) => {
+const ItemDetail = ({name, marca, modelo, categoria, imagen, precio,stock}) => {
     return (
         <div>
             <h2>{name}</h2>
-            <img src={image} alt={name}/>
-            <p>{marca}</p>
-            <p>{modelo}</p>
-            <p>{categoria}</p>
-            <p>Precio: ${precio}</p>
+            <img className="imgDetail my-4" src={imagen} alt={name}/>
+            <p>Marca: {marca}</p>
+            <p>Modelo: {modelo}</p>
+            <p>Categoria: {categoria}</p>
+            <p>Precio: $ {precio}</p>
+            <p>En Stock: {stock}</p>
+            {/* ItemCount */}
         </div>
     )
 }
