@@ -6,7 +6,8 @@
     "categoria": "Silbatos",
     "precio": "2500",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/MpShxz38/product1.png"
+    "imagen": "https://i.postimg.cc/MpShxz38/product1.png",
+    "name":"Silbato Fox Epik Azul"
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "categoria": "Silbatos",
     "precio": "3500",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/N01FFGB7/product2.png"
+    "imagen": "https://i.postimg.cc/N01FFGB7/product2.png",
+    "name":"Silbato Fox Sonik Naranja"
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "categoria": "Silbatos",
     "precio": "3500",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/QCqcTkDm/product3.png"
+    "imagen": "https://i.postimg.cc/QCqcTkDm/product3.png",
+    "name":"Silbato Fox Sonik Rosa"
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "categoria": "Silbatos",
     "precio": "4500",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/T2n0xgzp/product4.png"
+    "imagen": "https://i.postimg.cc/T2n0xgzp/product4.png",
+    "name":"Silbato Fox 40 Classic Rojo"
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "categoria": "Silbatos",
     "precio": "4500",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/rs9wJfKd/product5.png"
+    "imagen": "https://i.postimg.cc/rs9wJfKd/product5.png",
+    "name":"Silbato Fox 40 Classic Negro"
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "categoria": "flotabilidad",
     "precio": "5000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/mrWKLBds/product6.png"
+    "imagen": "https://i.postimg.cc/mrWKLBds/product6.png",
+    "name":"Torpedo Aquafloat"
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "categoria": "flotabilidad",
     "precio": "6000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/7LTPcH5r/product7.png"
+    "imagen": "https://i.postimg.cc/7LTPcH5r/product7.png",
+    "name":"Torpedo RescueBand"
   },
   {
     "id": 8,
@@ -69,16 +76,18 @@
     "categoria": "flotabilidad",
     "precio": "15000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/3xtD7xry/product8.png"
+    "imagen": "https://i.postimg.cc/3xtD7xry/product8.png",
+    "name":"Suncho RescueBand"
   },
   {
     "id": 9,
-    "marca": "Aquafloat",
+    "marca": "LifeguardPro",
     "modelo": "Suncho",
     "categoria": "flotabilidad",
     "precio": "17000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/PxxgcK3p/product9.png"
+    "imagen": "https://i.postimg.cc/PxxgcK3p/product9.png",
+    "name":"Suncho LifeguardPro"
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "categoria": "flotabilidad",
     "precio": "20000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/xjGZRwTx/product10.png"
+    "imagen": "https://i.postimg.cc/xjGZRwTx/product10.png",
+    "name":"Suncho Aquafloat"
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "categoria": "gorros",
     "precio": "2000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/mrFXFq5S/product11.png"
+    "imagen": "https://i.postimg.cc/mrFXFq5S/product11.png",
+    "name":"Gorra Guardavidas"
   },
   {
     "id": 12,
@@ -105,16 +116,18 @@
     "categoria": "gorros",
     "precio": "2500",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/15jrcB67/product12.png"
+    "imagen": "https://i.postimg.cc/15jrcB67/product12.png",
+    "name":"Visera Lifeguard"
   },
   {
     "id": 13,
-    "marca": "Thana",
+    "marca": "LifeguardPro",
     "modelo": "Safari",
     "categoria": "gorros",
     "precio": "3000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/2yj7TX2M/product13.png"
+    "imagen": "https://i.postimg.cc/2yj7TX2M/product13.png",
+    "name":"Gorro Safari LifeguardPro"
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "categoria": "gorros",
     "precio": "9000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/KzS97fXh/product14.png"
+    "imagen": "https://i.postimg.cc/KzS97fXh/product14.png",
+    "name":"Gorro Surfer LifeguardPro"
   },
   {
     "id": 15,
@@ -132,7 +146,8 @@
     "categoria": "gorros",
     "precio": "9000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/GpYKpD47/product15.png"
+    "imagen": "https://i.postimg.cc/GpYKpD47/product15.png",
+    "name":"Australiano LifeguardPro"
   },
   {
     "id": 16,
@@ -141,7 +156,8 @@
     "categoria": "binoculares",
     "precio": "12000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/JhWJP2hx/product16.png"
+    "imagen": "https://i.postimg.cc/JhWJP2hx/product16.png",
+    "name":"Binocular Luzbee"
   },
   {
     "id": 17,
@@ -150,7 +166,8 @@
     "categoria": "binoculares",
     "precio": "16000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/PJN8CG6X/product17.png"
+    "imagen": "https://i.postimg.cc/PJN8CG6X/product17.png",
+    "name":"Binocular Gammo"
   },
   {
     "id": 18,
@@ -159,7 +176,8 @@
     "categoria": "binoculares",
     "precio": "21000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/XY6pby07/product18.png"
+    "imagen": "https://i.postimg.cc/XY6pby07/product18.png",
+    "name":"Binocular Olympus"
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "categoria": "binoculares",
     "precio": "24000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/q7LtQBSB/product19.png"
+    "imagen": "https://i.postimg.cc/q7LtQBSB/product19.png",
+    "name":"Binocular Baskall"
   },
   {
     "id": 20,
@@ -177,6 +196,7 @@
     "categoria": "binoculares",
     "precio": "30000",
     "stock":"20",
-    "imagen": "https://i.postimg.cc/HsyVR9Rh/product20.png"
+    "imagen": "https://i.postimg.cc/HsyVR9Rh/product20.png",
+    "name":"Binocular Nikon"
   }
 ]

@@ -9,6 +9,7 @@ const Item = ({prod}) => {
         <div className='col-2 prodCard' >
 
             <img className='imgProd' src={prod.imagen} alt={prod.marca + prod.modelo} />
+            <h3> {prod.name}</h3>
             <p>Marca: {prod.marca}</p>
             <p>Modelo: {prod.modelo}</p>
             <p>Categoria: {prod.categoria}</p>

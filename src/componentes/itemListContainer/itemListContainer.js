@@ -7,7 +7,7 @@ import ItemList from '../itemList/itemList';
 function ItemListContainer(props) {
 
   const [productos,setProductos] = useState([])
-  console.log(productos)
+ // console.log(productos)
 
 
   useEffect( () => {
