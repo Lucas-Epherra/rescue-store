@@ -1,6 +1,11 @@
 .footer {
     width: 100vw;
     background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    color: white;
 }
 
 .textFooter {
