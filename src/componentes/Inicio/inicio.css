@@ -1,0 +1,22 @@
+.carouselText{
+    font-weight: 800;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 7px;
+    border-radius: 1rem;
+}
+
+.imgCarousel {
+    height: 100vh;
+}
+
+
+.textPosition {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}

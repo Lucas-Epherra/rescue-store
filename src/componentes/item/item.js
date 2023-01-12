@@ -9,9 +9,10 @@ const Item = ({prod}) => {
         <div className='col-2 prodCard' >
 
             <h4 className="titleCard"> {prod.name}</h4>
-            <img className='imgProd ' src={prod.imagen} alt={prod.marca + prod.modelo} />
+            <img className='imgProd' src={prod.imagen} alt={prod.marca + prod.modelo} />
             <p>Valor: ${prod.precio}</p>
-            <Link to={`/detalle/${prod.id}`}><button className='btn btn-warning m-4'>Ver Mas</button></Link>
+            <p>En Stock: {prod.stock}</p>
+            <Link to={`/detalle/${prod.id}`}><button className='btn btn-danger m-4'>Ver Mas</button></Link>
 
         </div>
 

@@ -3,11 +3,12 @@
     margin:1rem;
     background-color: white;
     border-radius: 15px;
+    padding: 1rem;
 }
 
 .prodCard {
     display: flex;
-    background-color: white;
+    background-color: rgb(255, 234, 1);
     border: solid black 1px;
     border-radius: 15px;
     flex-direction: column;

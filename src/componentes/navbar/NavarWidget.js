@@ -19,7 +19,7 @@ function NavbarWidget() {
                             className="align-top rounded-5"
                             alt="Logo"
                         />
-                        <p className="m-2 tituloNav">Rescue Store</p>
+                        <p className="mx-2 tituloNav">Rescue Store</p>
                     </div>            
                 </Link>
                 <Nav>

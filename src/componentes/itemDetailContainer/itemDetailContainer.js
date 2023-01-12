@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { leerMock, pedirItemPorId } from '../../helpers/leerMock'
+import { pedirItemPorId } from '../../helpers/leerMock'
 import ItemDetail from "../ItemDetail/ItemDetail"
 
 

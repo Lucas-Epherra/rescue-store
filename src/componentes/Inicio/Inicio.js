@@ -1,15 +1,58 @@
+import Carousel from 'react-bootstrap/Carousel';
+import imgOne from '../../assets/imagenOne.jpg';
+import imgTwo from '../../assets/imagenTwo.jpg';
+import imgThree from '../../assets/imagenThree.jpg';
+import './inicio.css';
+import { Link } from 'react-router-dom';
 
 
-const Inicio = () => {
-
+function PaginaDeInicio() {
   return (
-    <div>
-        <h2>
-            Inicio
-        </h2>
-    </div>
-  )
+    <Carousel fade>
 
+      <Carousel.Item>
+        <img
+          className="d-block w-100 imgCarousel"
+          src={imgOne}
+          alt="Imagen Uno"
+        />
+        <Carousel.Caption className='textPosition'>
+          <h3 className="carouselText">Bienvenido A Rescue Store</h3>
+          <Link to="/productos"><p className="btn btn-warning">Conoce Nuestros Productos</p></Link>
+        </Carousel.Caption>
+
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img
+          className="d-block w-100 imgCarousel"
+          src={imgTwo}
+          alt="Imagen Dos "
+        />
+
+        <Carousel.Caption className='textPosition'>
+          <h3 className="carouselText">Bienvenido A Rescue Store</h3>
+          <Link to="/productos"><p className="btn btn-warning">Conoce Nuestros Productos</p></Link>
+        </Carousel.Caption>
+
+      </Carousel.Item>
+
+      <Carousel.Item>
+
+        <img
+          className="d-block w-100 imgCarousel"
+          src={imgThree}
+          alt="Imagen Tres"
+        />
+
+        <Carousel.Caption className='textPosition'>
+          <h3 className="carouselText">Bienvenido A Rescue Store</h3>
+          <Link to="/productos"><p className="btn btn-warning">Conoce Nuestros Productos</p></Link>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+    </Carousel>
+  );
 }
 
-export default Inicio;
+export default PaginaDeInicio;

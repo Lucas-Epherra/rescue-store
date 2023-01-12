@@ -8,7 +8,7 @@ function CartWidget() {
                 src={cart}
                 width="30"
                 height="30"
-                className=" align-center"
+                className="align-center"
                 alt="cart logo"
             />
             <p className="m-1 numProductos">1</p>

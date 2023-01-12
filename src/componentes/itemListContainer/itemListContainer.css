@@ -1,5 +1,8 @@
 .itemListCont{
     padding: 2rem;
+    background-color:rgba(255, 34, 0, 0.795);
+    height:100%;
+
 }
 
 .title {

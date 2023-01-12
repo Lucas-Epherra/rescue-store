@@ -11,10 +11,10 @@ const ItemList = ({ productos }) => {
             <hr />
             
             <section className='categorias'>    
-                <Link className='mx-2 btn btn-danger' to={"/productos/silbatos"}>silbatos</Link>
-                <Link className='mx-2 btn btn-danger' to={"/productos/flotabilidad"}>flotabilidad</Link>
-                <Link className='mx-2 btn btn-danger' to={"/productos/gorros"}>gorros</Link>
-                <Link className='mx-2 btn btn-danger' to={"/productos/binoculares"}>binoculares</Link>
+                <Link className='mx-2 btn btn-warning' to={"/productos/silbatos"}>silbatos</Link>
+                <Link className='mx-2 btn btn-warning' to={"/productos/flotabilidad"}>flotabilidad</Link>
+                <Link className='mx-2 btn btn-warning' to={"/productos/gorros"}>gorros</Link>
+                <Link className='mx-2 btn btn-warning' to={"/productos/binoculares"}>binoculares</Link>
             </section>
 
             <hr />
