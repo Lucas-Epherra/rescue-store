@@ -23,9 +23,9 @@ function NavbarWidget() {
                     </div>            
                 </Link>
                 <Nav>
-                    <Link className="links mx-2 btn btn-warning" to="/">Inicio
+                    <Link className="links mx-2 my-2 btn btn-warning" to="/">Inicio
                     </Link>
-                    <Link className="links mx-2 btn btn-warning" to="/productos">
+                    <Link className="links mx-2 my-2 btn btn-warning" to="/productos">
                         Productos
                     </Link>
                     <CartWidget />
