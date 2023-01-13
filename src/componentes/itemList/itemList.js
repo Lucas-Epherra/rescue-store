@@ -11,14 +11,15 @@ const ItemList = ({ productos }) => {
             <hr />
             
             <section className='categorias'>    
-                <Link className='mx-2 btn btn-warning' to={"/productos/silbatos"}>silbatos</Link>
-                <Link className='mx-2 btn btn-warning' to={"/productos/flotabilidad"}>flotabilidad</Link>
-                <Link className='mx-2 btn btn-warning' to={"/productos/gorros"}>gorros</Link>
-                <Link className='mx-2 btn btn-warning' to={"/productos/binoculares"}>binoculares</Link>
+                <Link className='mx-2 my-2 btn btn-warning' to={"/productos"}>Todos Los Productos</Link>
+                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/silbatos"}>Silbatos</Link>
+                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/flotabilidad"}>Flotabilidad</Link>
+                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/gorros"}>Gorros</Link>
+                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/binoculares"}>Binoculares</Link>
             </section>
 
             <hr />
-            <section className="row">
+            <section className="itemList">
                 {productos.map((prod) => <Item key={prod.id} prod={prod}/>)}
             </section>
 

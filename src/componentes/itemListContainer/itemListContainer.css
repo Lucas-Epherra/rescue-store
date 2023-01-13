@@ -8,3 +8,8 @@
 .title {
     text-align: center;
 }
+
+.itemListCont{
+    display: flex;
+    justify-content: center;
+}

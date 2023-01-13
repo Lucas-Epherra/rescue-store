@@ -12,6 +12,7 @@
     border: solid black 1px;
     border-radius: 15px;
     flex-direction: column;
+    width: 200px;
     align-items: center;
     padding: 1rem;
     margin: 1rem;
