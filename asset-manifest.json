@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Rescue-Store/static/css/main.7ec0dc86.css",
+    "main.css": "/Rescue-Store/static/css/main.4aa2ab15.css",
     "main.js": "/Rescue-Store/static/js/main.a27b9b5f.js",
     "static/media/logo.png": "/Rescue-Store/static/media/logo.f1d1b01127183f5211ea.png",
     "static/media/guardavidas.jpg": "/Rescue-Store/static/media/guardavidas.a8939f885337a292ca93.jpg",
@@ -11,11 +11,11 @@
     "static/media/imagenThree.jpg": "/Rescue-Store/static/media/imagenThree.9aa60cfe6518c21e8cff.jpg",
     "static/media/cart.svg": "/Rescue-Store/static/media/cart.ec34e04f278866298777c9836305a693.svg",
     "index.html": "/Rescue-Store/index.html",
-    "main.7ec0dc86.css.map": "/Rescue-Store/static/css/main.7ec0dc86.css.map",
+    "main.4aa2ab15.css.map": "/Rescue-Store/static/css/main.4aa2ab15.css.map",
     "main.a27b9b5f.js.map": "/Rescue-Store/static/js/main.a27b9b5f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ec0dc86.css",
+    "static/css/main.4aa2ab15.css",
     "static/js/main.a27b9b5f.js"
   ]
 }
