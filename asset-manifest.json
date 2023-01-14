@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/Rescue-Store/static/css/main.40bc2994.css",
-    "main.js": "/Rescue-Store/static/js/main.1c2c6e85.js",
+    "main.css": "/Rescue-Store/static/css/main.7ec0dc86.css",
+    "main.js": "/Rescue-Store/static/js/main.a27b9b5f.js",
     "static/media/logo.png": "/Rescue-Store/static/media/logo.f1d1b01127183f5211ea.png",
+    "static/media/guardavidas.jpg": "/Rescue-Store/static/media/guardavidas.a8939f885337a292ca93.jpg",
     "static/media/imagenTwo.jpg": "/Rescue-Store/static/media/imagenTwo.1b699a3f1e9a20de4bb5.jpg",
+    "static/media/elementos.jpg": "/Rescue-Store/static/media/elementos.49ecfaee34d35223ad83.jpg",
     "static/media/imagenOne.jpg": "/Rescue-Store/static/media/imagenOne.f8ae23073bb3071421d8.jpg",
+    "static/media/fox402.jpg": "/Rescue-Store/static/media/fox402.7fedbd9041430a34c0ee.jpg",
     "static/media/imagenThree.jpg": "/Rescue-Store/static/media/imagenThree.9aa60cfe6518c21e8cff.jpg",
     "static/media/cart.svg": "/Rescue-Store/static/media/cart.ec34e04f278866298777c9836305a693.svg",
     "index.html": "/Rescue-Store/index.html",
-    "main.40bc2994.css.map": "/Rescue-Store/static/css/main.40bc2994.css.map",
-    "main.1c2c6e85.js.map": "/Rescue-Store/static/js/main.1c2c6e85.js.map"
+    "main.7ec0dc86.css.map": "/Rescue-Store/static/css/main.7ec0dc86.css.map",
+    "main.a27b9b5f.js.map": "/Rescue-Store/static/js/main.a27b9b5f.js.map"
   },
   "entrypoints": [
-    "static/css/main.40bc2994.css",
-    "static/js/main.1c2c6e85.js"
+    "static/css/main.7ec0dc86.css",
+    "static/js/main.a27b9b5f.js"
   ]
 }
