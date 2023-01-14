@@ -1,9 +1,11 @@
+.divMain{
+    background-color:black;
+}
+
 .carouselText{
     font-weight: 800;
     background-color: crimson;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     width: fit-content;
     padding: 7px;
     border-radius: 1rem;
@@ -19,4 +21,11 @@
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;
+}
+
+.stars{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-top:1rem;
 }
