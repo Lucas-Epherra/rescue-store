@@ -5,7 +5,6 @@ import guardavidas from '../../assets/guardavidas.jpg';
 import { Link } from 'react-router-dom';
 import './sliderProd.css';
 
-
 function SliderProd() {
   return (
     <Carousel fade className='sliderB'>
