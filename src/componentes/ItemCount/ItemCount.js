@@ -15,13 +15,13 @@ const ItemCount = () => {
   return (
     <div className="container countCard">
       <strong>
-        <p>Cantidad:</p>
+        <p className="cantidad">Cantidad:</p>
       </strong>
 
       <section className="clicker mx-2">
-        <button className="btn btn-secondary mx-2" onClick={restar}> - </button>
+        <button className="btn btn-outline-primary mx-2" onClick={restar}> - </button>
         <span className="count">{cantidad}</span>
-        <button className="btn btn-secondary mx-2" onClick={sumar}> + </button>
+        <button className="btn btn-primary mx-2" onClick={sumar}> + </button>
       </section>
     </div>
   );

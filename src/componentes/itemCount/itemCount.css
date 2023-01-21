@@ -1,9 +1,10 @@
 .clicker {
     display:flex;
-    background-color:wheat;
+    background-color:rgb(255, 255, 255);
     width: fit-content;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
+    margin-bottom: 7px;
     border-radius: 10px;
 }
 
@@ -16,6 +17,9 @@
     border-radius: 1rem;
 }
 
+.cantidad {
+    margin-top: 5px;
+}
 
 .count {
     margin:  0 auto;
