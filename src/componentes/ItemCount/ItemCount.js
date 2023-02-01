@@ -1,28 +1,32 @@
-import { useState } from "react";
 import "./itemCount.css";
 
-const ItemCount = () => {
-  const [cantidad, setCantidad] = useState(1);
+const ItemCount = ({max,cantidad,setCantidad,onAdd}) => {
 
-  const restar = () => {
+  
+  const handleRestar = () => {
     cantidad > 1 && setCantidad(cantidad - 1);
   };
 
-  const sumar = () => {
-    cantidad < 20 && setCantidad(cantidad + 1);
+  const handleSumar = () => {
+    cantidad < max && setCantidad(cantidad + 1);
   };
+
 
   return (
     <div className="container countCard">
+
       <strong>
         <p className="cantidad">Cantidad:</p>
       </strong>
 
       <section className="clicker mx-2">
-        <button className="btn btn-outline-primary mx-2" onClick={restar}> - </button>
+        <button className="btn btn-outline-primary mx-2" onClick={handleRestar}> - </button>
         <span className="count">{cantidad}</span>
-        <button className="btn btn-primary mx-2" onClick={sumar}> + </button>
-      </section>
+        <button className="btn btn-primary mx-2" onClick={handleSumar}> + </button>
+        <br/>
+        <button className="btn btn-success mx-2" onClick={onAdd}> Agregar al carrito</button>      
+        </section>
+      
     </div>
   );
 };

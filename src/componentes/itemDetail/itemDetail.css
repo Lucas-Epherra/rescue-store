@@ -14,3 +14,8 @@
    border-radius: 1rem;
    background-color: rgb(255, 234, 1);
 }
+
+.desc {
+   text-align: center;
+   width: 250px;
+}

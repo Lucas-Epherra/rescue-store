@@ -6,7 +6,7 @@
     "categoria": "silbatos",
     "precio": "2500",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "30",
     "imagen": "https://i.postimg.cc/MpShxz38/product1.png",
     "name": "Silbato Fox Epik Azul"
   },
@@ -17,7 +17,7 @@
     "categoria": "silbatos",
     "precio": "3500",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "25",
     "imagen": "https://i.postimg.cc/N01FFGB7/product2.png",
     "name": "Silbato Fox Sonik Naranja"
   },
@@ -28,7 +28,7 @@
     "categoria": "silbatos",
     "precio": "3500",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "15",
     "imagen": "https://i.postimg.cc/QCqcTkDm/product3.png",
     "name": "Silbato Fox Sonik Rosa"
   },
@@ -39,7 +39,7 @@
     "categoria": "silbatos",
     "precio": "4500",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "44",
     "imagen": "https://i.postimg.cc/T2n0xgzp/product4.png",
     "name": "Silbato Fox 40 Classic Rojo"
   },
@@ -50,7 +50,7 @@
     "categoria": "silbatos",
     "precio": "4500",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "22",
     "imagen": "https://i.postimg.cc/rs9wJfKd/product5.png",
     "name": "Silbato Fox 40 Classic Negro"
   },
@@ -61,7 +61,7 @@
     "categoria": "flotabilidad",
     "precio": "5000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "10",
     "imagen": "https://i.postimg.cc/mrWKLBds/product6.png",
     "name": "Torpedo Aquafloat"
   },
@@ -72,7 +72,7 @@
     "categoria": "flotabilidad",
     "precio": "6000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "29",
     "imagen": "https://i.postimg.cc/7LTPcH5r/product7.png",
     "name": "Torpedo RescueBand"
   },
@@ -83,7 +83,7 @@
     "categoria": "flotabilidad",
     "precio": "15000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "27",
     "imagen": "https://i.postimg.cc/3xtD7xry/product8.png",
     "name": "Suncho RescueBand"
   },
@@ -94,7 +94,7 @@
     "categoria": "flotabilidad",
     "precio": "17000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "25",
     "imagen": "https://i.postimg.cc/PxxgcK3p/product9.png",
     "name": "Suncho LifeguardPro"
   },
@@ -105,7 +105,7 @@
     "categoria": "flotabilidad",
     "precio": "20000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "24",
     "imagen": "https://i.postimg.cc/xjGZRwTx/product10.png",
     "name": "Suncho Aquafloat"
   },
@@ -116,7 +116,7 @@
     "categoria": "gorros",
     "precio": "2000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "10",
     "imagen": "https://i.postimg.cc/mrFXFq5S/product11.png",
     "name": "Gorra Guardavidas"
   },
@@ -127,7 +127,7 @@
     "categoria": "gorros",
     "precio": "2500",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "5",
     "imagen": "https://i.postimg.cc/15jrcB67/product12.png",
     "name": "Visera Plana Lifeguard"
   },
@@ -138,7 +138,7 @@
     "categoria": "gorros",
     "precio": "3000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "15",
     "imagen": "https://i.postimg.cc/2yj7TX2M/product13.png",
     "name": "Gorro Safari LifeguardPro"
   },
@@ -149,7 +149,7 @@
     "categoria": "gorros",
     "precio": "9000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "10",
     "imagen": "https://i.postimg.cc/KzS97fXh/product14.png",
     "name": "Gorro Surfer LifeguardPro"
   },
@@ -160,7 +160,7 @@
     "categoria": "gorros",
     "precio": "9000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "4",
     "imagen": "https://i.postimg.cc/GpYKpD47/product15.png",
     "name": "Australiano Lifeguard"
   },
@@ -171,7 +171,7 @@
     "categoria": "binoculares",
     "precio": "12000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "5",
     "imagen": "https://i.postimg.cc/JhWJP2hx/product16.png",
     "name": "Binoculares Luzbee"
   },
@@ -182,7 +182,7 @@
     "categoria": "binoculares",
     "precio": "16000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.",
-    "stock": "20",
+    "stock": "10",
     "imagen": "https://i.postimg.cc/PJN8CG6X/product17.png",
     "name": "Binoculares Gammo"
   },
@@ -193,7 +193,7 @@
     "categoria": "binoculares",
     "precio": "21000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "15",
     "imagen": "https://i.postimg.cc/XY6pby07/product18.png",
     "name": "Binoculares Olympus"
   },
@@ -204,7 +204,7 @@
     "categoria": "binoculares",
     "precio": "24000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "50",
     "imagen": "https://i.postimg.cc/q7LtQBSB/product19.png",
     "name": "Binoculares Baskall"
   },
@@ -215,7 +215,7 @@
     "categoria": "binoculares",
     "precio": "30000",
     "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.",
-    "stock": "20",
+    "stock": "55",
     "imagen": "https://i.postimg.cc/HsyVR9Rh/product20.png",
     "name": "Binoculares Nikon"
   }
