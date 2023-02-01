@@ -1,33 +1,39 @@
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
-import PaginaDeInicio from './componentes/Inicio/Inicio';
+import Inicio from './componentes/Inicio/Inicio';
 import NavbarWidget from './componentes/navbar/NavarWidget'
 import Footer from './componentes/footer/Footer';
 import { BrowserRouter , Routes , Route } from 'react-router-dom';
+import { CartContext } from './context/CartContext';
 
 
 function App() {
 
+  const profesor = "Conrado Lanusse"
+  const alumno = "Materra"
+  
+
   return (
    
-    <BrowserRouter>
-    
-      <NavbarWidget/>
+    <CartContext.Provider value={{profesor,alumno}}>
+      <BrowserRouter>
+      
+        <NavbarWidget/>
 
-      <Routes>
+        <Routes>
 
-        <Route path='/' element={<PaginaDeInicio />}/>
-        <Route path='/*' element={<PaginaDeInicio />}/>
-        <Route path='/productos' element={<ItemListContainer />}/>
-        <Route path='/productos/:categoryId' element={<ItemListContainer />}/>
-        <Route path='/detalle/:itemId' element={<ItemDetailContainer/>}/>
-        
-      </Routes>
+          <Route path='/' element={<Inicio />}/>
+          <Route path='/*' element={<Inicio />}/>
+          <Route path='/productos' element={<ItemListContainer />}/>
+          <Route path='/productos/:categoryId' element={<ItemListContainer />}/>
+          <Route path='/detalle/:itemId' element={<ItemDetailContainer/>}/>
+          
+        </Routes>
 
-      <Footer/>
+        <Footer/>
 
-    </BrowserRouter>
-
+      </BrowserRouter>
+    </CartContext.Provider>
       
   )
 }

@@ -5,10 +5,17 @@ import imgThree from '../../assets/imagenThree.jpg';
 import './inicio.css';
 import { Link } from 'react-router-dom';
 import SliderProd from './SliderProd';
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
 
 
-function PaginaDeInicio() {
+const Inicio = () => {
+
+const contexto = useContext(CartContext)
+console.log(contexto)
+
   return (
+
     <div className='divMain'>
       <Carousel fade variant="dark">
 
@@ -56,7 +63,8 @@ function PaginaDeInicio() {
       <p className='stars'>⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐</p>
       <SliderProd/>
     </div>
+
   );
 }
 
-export default PaginaDeInicio;
+export default Inicio;
