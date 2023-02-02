@@ -1,4 +1,4 @@
-import './cart.css';
+import './cartWidget.css';
 import cart from '../../../assets/cart.svg'
 
 

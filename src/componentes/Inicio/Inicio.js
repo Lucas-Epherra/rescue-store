@@ -5,14 +5,14 @@ import imgThree from '../../assets/imagenThree.jpg';
 import './inicio.css';
 import { Link } from 'react-router-dom';
 import SliderProd from './SliderProd';
-import { CartContext } from '../../context/CartContext';
+/* import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
-
+ */
 
 const Inicio = () => {
 
-const contexto = useContext(CartContext)
-console.log(contexto)
+/* const contexto = useContext(CartContext)
+console.log(contexto) */
 
   return (
 
