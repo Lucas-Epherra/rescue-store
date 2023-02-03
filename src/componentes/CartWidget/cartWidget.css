@@ -15,4 +15,5 @@
 .numProductos {
     font-weight: 500;
     color: black;
+    text-decoration:underline rgb(220,53,69);
 }

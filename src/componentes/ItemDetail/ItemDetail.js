@@ -7,8 +7,7 @@ import "./itemDetail.css";
 const ItemDetail = ({id,name,marca,modelo,categoria,imagen,precio,descripcion,stock,}) => {
 
     const { agregarAlCarrito , isInCart } = useContext(CartContext)
-/*     console.log(isInCart(id))
- */    
+
     const [cantidad, setCantidad] = useState(1);
 
     const navigate = useNavigate();
@@ -44,7 +43,7 @@ const ItemDetail = ({id,name,marca,modelo,categoria,imagen,precio,descripcion,st
                     setCantidad={setCantidad}
                     onAdd={handleAgregar}
                     
-                    />:<Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+                    />:<Link to="/cart" className="btn btn-success">Ver en el carrito</Link>
             }                
             
 
