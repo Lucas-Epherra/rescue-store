@@ -8,7 +8,7 @@ import "./navbar.css";
 
 function NavbarWidget() {
     return (
-        <Navbar bg="danger" variant="danger" className="navbar sticky-top">
+        <Navbar className="navbar sticky-top">
             <Container className="container">
                 <Link to="/">              
                     <div className="d-flex">

@@ -7,7 +7,7 @@
 
 .cart:hover {
     padding: 3px;
-    background-color: rgba(255, 255, 255, 0.356);
+    background-color: red;
     border: 1px solid rgba(0, 0, 0, 0.53);
     border-radius: 15px;
 }
@@ -15,5 +15,5 @@
 .numProductos {
     font-weight: 500;
     color: black;
-    text-decoration:underline rgb(220,53,69);
+    text-decoration:underline rgb(255, 0, 0);
 }
