@@ -5,8 +5,12 @@ import CartWidget from "../CartWidget/CartWidget";
 import logo from "../../assets/logo.png";
 import { Link } from 'react-router-dom';
 import "./navbar.css";
+import { useLoginContext } from "../../context/LoginContext";
 
 function NavbarWidget() {
+
+    const {user,logout} = useLoginContext()
+
     return (
         <Navbar className="navbar sticky-top">
             <Container className="container">
@@ -29,6 +33,10 @@ function NavbarWidget() {
                         Productos
                     </Link>
                     <CartWidget />
+                    <div className="logoutDiv" >
+                        <p>Bienvenido: {user.email} </p>
+                        <button className="btn btn-outline-warning" onClick={logout}>Logout</button>
+                    </div>
                 </Nav>
             </Container>
         </Navbar>
