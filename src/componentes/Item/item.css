@@ -1,0 +1,23 @@
+.imgProd {
+    width: 200px;
+    margin:1rem;
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.prodCard {
+    display: flex;
+    background-color: rgb(255, 234, 1);
+    border: solid black 1px;
+    border-radius: 15px;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    padding: 1rem;
+    margin: 10px;
+}
+
+.titleCard {
+    text-align: center;
+}

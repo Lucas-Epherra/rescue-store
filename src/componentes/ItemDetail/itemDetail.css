@@ -1,0 +1,21 @@
+.imgDetail {
+   height: 400px;
+   background-color: white;
+   border-radius: 1rem;
+}
+
+.detailCard{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   padding: 2rem 2rem 2rem 2rem;
+   border-radius: 1rem;
+   background-color: rgb(255, 234, 1);
+}
+
+.desc {
+   text-align: center;
+   width: 250px;
+}
