@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Rescue-Store/static/css/main.01ccee69.css",
-    "main.js": "/Rescue-Store/static/js/main.3072893d.js",
+    "main.css": "/Rescue-Store/static/css/main.a28831dd.css",
+    "main.js": "/Rescue-Store/static/js/main.52ce90b4.js",
     "static/media/logo.png": "/Rescue-Store/static/media/logo.f1d1b01127183f5211ea.png",
     "static/media/guardavidas.jpg": "/Rescue-Store/static/media/guardavidas.a8939f885337a292ca93.jpg",
     "static/media/imagenTwo.jpg": "/Rescue-Store/static/media/imagenTwo.1b699a3f1e9a20de4bb5.jpg",
@@ -11,11 +11,11 @@
     "static/media/imagenThree.jpg": "/Rescue-Store/static/media/imagenThree.9aa60cfe6518c21e8cff.jpg",
     "static/media/cart.svg": "/Rescue-Store/static/media/cart.ec34e04f278866298777c9836305a693.svg",
     "index.html": "/Rescue-Store/index.html",
-    "main.01ccee69.css.map": "/Rescue-Store/static/css/main.01ccee69.css.map",
-    "main.3072893d.js.map": "/Rescue-Store/static/js/main.3072893d.js.map"
+    "main.a28831dd.css.map": "/Rescue-Store/static/css/main.a28831dd.css.map",
+    "main.52ce90b4.js.map": "/Rescue-Store/static/js/main.52ce90b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.01ccee69.css",
-    "static/js/main.3072893d.js"
+    "static/css/main.a28831dd.css",
+    "static/js/main.52ce90b4.js"
   ]
 }
