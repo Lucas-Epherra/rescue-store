@@ -4,7 +4,7 @@ import "./LoginScreen.css";
 
 const LoginScreen = () => {
 
-  const {login,logout} = useContext(LoginContext)
+  const {login,} = useContext(LoginContext)
 
   const [values, setValues] = useState({
     email: "",
