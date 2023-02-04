@@ -1,0 +1,27 @@
+.clicker {
+    display:flex;
+    background-color:rgb(255, 255, 255);
+    width: fit-content;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 7px;
+    border-radius: 10px;
+}
+
+.countCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.cantidad {
+    margin-top: 5px;
+}
+
+.count {
+    margin:  0 auto;
+}
+
