@@ -1,0 +1,16 @@
+.categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    font-weight: 700;
+    color: white;
+}
+
+.itemList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
