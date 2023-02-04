@@ -8,7 +8,7 @@
 .cart:hover {
     padding: 3px;
     background-color: red;
-    border: 1px solid rgba(0, 0, 0, 0.53);
+    border: 2px solid rgba(0, 0, 0, 0.53);
     border-radius: 15px;
 }
 

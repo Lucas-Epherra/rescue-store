@@ -6,28 +6,33 @@ import Footer from "./componentes/footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./componentes/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
+import LoginScreen from "./componentes/LoginScreen/LoginScreen";
+import { LoginProvider } from "./context/LoginContext";
 
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <NavbarWidget />
+    <LoginProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <NavbarWidget />
 
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/*" element={<Inicio />} />
-          <Route path="/productos" element={<ItemListContainer />} />
-          <Route
-            path="/productos/:categoryId"
-            element={<ItemListContainer />}
-          />
-          <Route path="/detalle/:itemId" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
+          <Routes>
+            <Route path="/login" element={<LoginScreen />} />
+            <Route path="/" element={<Inicio />} />
+            <Route path="/*" element={<Inicio />} />
+            <Route path="/productos" element={<ItemListContainer />} />
+            <Route
+              path="/productos/:categoryId"
+              element={<ItemListContainer />}
+            />
+            <Route path="/detalle/:itemId" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
 
-        <Footer />
-      </BrowserRouter>
-    </CartProvider>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
+    </LoginProvider>
   );
 }
 
