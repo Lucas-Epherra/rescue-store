@@ -35,7 +35,7 @@ function NavbarWidget() {
                     <CartWidget />
                     <div className="logoutDiv" >
                         <p>Bienvenido: {user.email} </p>
-                        <button className="btn btn-outline-warning" onClick={logout}>Logout</button>
+                        <button className="btn btn-warning" onClick={logout}>Logout</button>
                     </div>
                 </Nav>
             </Container>

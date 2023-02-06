@@ -9,7 +9,7 @@ const Cart = () => {
   const { cart, vaciarCart, sumarTotalCart } = useContext(CartContext);
 
   return (
-    <div className="container my-5">
+    <div className="cartBody container my-5">
       <h2>Tu Carrito</h2>
       <hr />
 

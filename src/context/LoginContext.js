@@ -18,8 +18,8 @@ const MOCK_USERS = [
 export const LoginContext = createContext();
 
 export const useLoginContext = () => {
-  return useContext(LoginContext)
-}
+  return useContext(LoginContext);
+};
 
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = useState({
@@ -31,11 +31,19 @@ export const LoginProvider = ({ children }) => {
   console.log(user);
 
   const login = (values) => {
-    const match = MOCK_USERS.find(
-      (user) => user.email === values.email && user.password === values.password
-    );
+    const match = MOCK_USERS.find((user) => user.email === values.email);
 
-    if (match) {
+    if (!match) {
+      setUser({
+        email: null,
+        logged: false,
+        mensaje: "Usuario No Encontrado",
+      });
+
+      return;
+    }
+
+    if (match.password === values.password) {
       setUser({
         email: match.email,
         logged: true,
@@ -45,7 +53,7 @@ export const LoginProvider = ({ children }) => {
       setUser({
         email: null,
         logged: false,
-        mensaje: "Los datos son invalidos",
+        mensaje: "Password Incorrecto",
       });
     }
   };

@@ -3,3 +3,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.cartBody{
+    min-height: 100vh;
+}

@@ -4,7 +4,7 @@ import "./LoginScreen.css";
 
 const LoginScreen = () => {
 
-  const {login,} = useContext(LoginContext)
+  const {login,user} = useContext(LoginContext)
 
   const [values, setValues] = useState({
     email: "",
@@ -46,6 +46,7 @@ const LoginScreen = () => {
             name="password"
           />
           <button className="btn btn-primary my-3">Ingresar</button>
+          {user.mensaje && <p className="loginError" >{user.mensaje}</p>}
         </form>
       </div>
     </div>
