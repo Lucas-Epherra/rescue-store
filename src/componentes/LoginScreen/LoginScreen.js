@@ -4,7 +4,7 @@ import "./LoginScreen.css";
 
 const LoginScreen = () => {
 
-  const {login,user} = useContext(LoginContext)
+  const {login,user,loading} = useContext(LoginContext)
 
   const [values, setValues] = useState({
     email: "",
@@ -45,7 +45,7 @@ const LoginScreen = () => {
             onChange={handleInputChange}
             name="password"
           />
-          <button className="btn btn-primary my-3">Ingresar</button>
+          <button disabled={loading} className="btn btn-primary my-3">Ingresar</button>
           {user.mensaje && <p className="loginError" >{user.mensaje}</p>}
         </form>
       </div>

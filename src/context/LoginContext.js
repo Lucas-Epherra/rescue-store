@@ -22,40 +22,44 @@ export const useLoginContext = () => {
 };
 
 export const LoginProvider = ({ children }) => {
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({
-    email: null,
-    logged: false,
+    email: "usuarioCreado1@gmail.com",
+    logged: true,
     mensaje: null,
   });
 
   console.log(user);
 
   const login = (values) => {
-    const match = MOCK_USERS.find((user) => user.email === values.email);
+    setLoading(true);
+    setTimeout(() => {
+      const match = MOCK_USERS.find((user) => user.email === values.email);
 
-    if (!match) {
-      setUser({
-        email: null,
-        logged: false,
-        mensaje: "Usuario No Encontrado",
-      });
+      if (!match) {
+        setUser({
+          email: null,
+          logged: false,
+          mensaje: "Usuario No Encontrado",
+        });
 
-      return;
-    }
+        return;
+      }
 
-    if (match.password === values.password) {
-      setUser({
-        email: match.email,
-        logged: true,
-        mensaje: "Bienvenido A Rescue Store",
-      });
-    } else {
-      setUser({
-        email: null,
-        logged: false,
-        mensaje: "Password Incorrecto",
-      });
-    }
+      if (match.password === values.password) {
+        setUser({
+          email: match.email,
+          logged: true,
+          mensaje: "Bienvenido A Rescue Store",
+        });
+      } else {
+        setUser({
+          email: null,
+          logged: false,
+          mensaje: "Password Incorrecto",
+        });
+      }
+    }, 1500);
   };
 
   const logout = () => {
@@ -67,7 +71,7 @@ export const LoginProvider = ({ children }) => {
   };
 
   return (
-    <LoginContext.Provider value={{ user, login, logout }}>
+    <LoginContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </LoginContext.Provider>
   );
