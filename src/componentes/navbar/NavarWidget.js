@@ -26,16 +26,17 @@ function NavbarWidget() {
                         <p className="m-2 tituloNav">Rescue Store</p>
                     </div>            
                 </Link>
-                <Nav>
-                    <Link className="links mx-2 my-2 btn btn-warning" to="/">Inicio
+                <Nav className="btnBox">
+                    <Link className="links mx-2 btn btn-warning" to="/">Inicio
                     </Link>
-                    <Link className="links mx-2 my-2 btn btn-warning" to="/productos">
+                    <Link className="links mx-2 btn btn-warning" to="/productos">
                         Productos
                     </Link>
                     <CartWidget />
                     <div className="logoutDiv" >
-                        <p>Bienvenido: {user.email} </p>
-                        <button className="btn btn-warning" onClick={logout}>Logout</button>
+                        
+                        <p className="user">{user.email} </p>
+                        <button className="btn btn-danger logoutBtn" onClick={logout}>Logout</button>
                     </div>
                 </Nav>
             </Container>
