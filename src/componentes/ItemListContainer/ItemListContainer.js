@@ -14,9 +14,10 @@ function ItemListContainer() {
     setLoading(true);
 
     const prodRef = collection(db, "productos")
-    const q = categoryId 
+
+    const q = categoryId
       ? query(prodRef, where("categoria", "==", categoryId))
-      : prodRef
+      : prodRef;
 
     getDocs(q)
       .then((resp) => {
@@ -41,6 +42,7 @@ function ItemListContainer() {
       ) : (
         <ItemList productos={productos} />
       )}
+      
     </div>
   );
 }
