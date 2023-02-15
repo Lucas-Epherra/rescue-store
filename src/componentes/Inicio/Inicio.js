@@ -5,14 +5,9 @@ import imgThree from '../../assets/imagenThree.jpg';
 import './inicio.css';
 import { Link } from 'react-router-dom';
 import SliderProd from './SliderProd';
-/* import { CartContext } from '../../context/CartContext';
-import { useContext } from 'react';
- */
 
 const Inicio = () => {
 
-/* const contexto = useContext(CartContext)
-console.log(contexto) */
 
   return (
 
@@ -24,8 +19,8 @@ console.log(contexto) */
             className="d-block w-100 imgCarousel"
             src={imgOne}
             alt="Imagen Uno"
-          />
-          <Carousel.Caption className='textPosition'>
+          /> 
+          <Carousel.Caption className='textPosition '>
             <h3 className="carouselText">Bienvenido A Rescue Store</h3>
             <Link to="/productos"><p className="btn btn-warning">Conoce Nuestros Productos</p></Link>
           </Carousel.Caption>

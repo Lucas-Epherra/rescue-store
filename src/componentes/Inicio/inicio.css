@@ -21,6 +21,7 @@
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;
+    top: 7%;
 }
 
 .stars{

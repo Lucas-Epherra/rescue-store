@@ -8,7 +8,6 @@ const init = JSON.parse(localStorage.getItem('cart')) || [] ;
 export const CartProvider = ({children}) => {
 
   const [cart, setCart] = useState(init);
-  console.log(cart);
 
   const agregarAlCarrito = (item) => {
     setCart([...cart, item]);

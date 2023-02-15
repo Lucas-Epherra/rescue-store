@@ -5,7 +5,7 @@ import "./LoginScreen.css";
 
 const LoginScreen = () => {
 
-  const {login,user,loading} = useContext(LoginContext)
+  const {login,user,loading,googleLogin} = useContext(LoginContext)
 
   const [values, setValues] = useState({
     email: "",
@@ -47,6 +47,7 @@ const LoginScreen = () => {
             name="password"
           />
           <button disabled={loading} className="btn btn-primary my-3">Ingresar</button>
+          <button onClick={googleLogin} className="btn btn-success my-3">Ingresar con google</button>
           <Link to="/register">Crear una cuenta</Link>
           {user.mensaje && <p className="loginError" >{user.mensaje}</p>}
         </form>

@@ -26,7 +26,7 @@ function NavbarWidget() {
                         <p className="m-2 tituloNav">Rescue Store</p>
                     </div>            
                 </Link>
-                <Nav className="btnBox">
+                <Nav className="btnBox d-flex flex-wrap">
                     <Link className="links mx-2 btn btn-warning" to="/">Inicio
                     </Link>
                     <Link className="links mx-2 btn btn-warning" to="/productos">

@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../firebase/config";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../firebase/config";
 
 export const LoginContext = createContext();
 
@@ -34,6 +34,18 @@ export const LoginProvider = ({ children }) => {
         setLoading(false);
       });
   };
+
+  const googleLogin = () => {
+    signInWithPopup(auth,provider)
+    .catch((error) => {
+      console.log(error)
+      setUser({
+        email: null,
+        logged: false,
+        mensaje: error.message
+      })
+    })
+  }
 
   const logout = () => {
     signOut(auth)
@@ -75,7 +87,7 @@ export const LoginProvider = ({ children }) => {
   },[])
 
   return (
-    <LoginContext.Provider value={{ user, login, logout, loading, register }}>
+    <LoginContext.Provider value={{ user, login, logout, loading, register, googleLogin }}>
       {children}
     </LoginContext.Provider>
   );
