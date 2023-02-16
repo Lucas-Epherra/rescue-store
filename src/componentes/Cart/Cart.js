@@ -12,9 +12,11 @@ const Cart = () => {
       {cart.length === 0 ? (
         <>
           <h2>Tu Carrio Esta Vacio</h2>
-          <hr/>
+          <hr />
           <p>Agregue sus productos al carrito</p>
-          <Link to="/productos" className="btn btn-success mx-3 my-5">Ver lista de productos</Link>
+          <Link to="/productos" className="btn btn-success mx-3 my-5">
+            Ver lista de productos
+          </Link>
         </>
       ) : (
         <>
@@ -30,11 +32,17 @@ const Cart = () => {
           <button className="btn btn-danger my-3" onClick={vaciarCart}>
             Vaciar Carrito
           </button>
-          <Link to="/productos">
-            <button className="btn btn-success mx-3 my-3">
-              Continuar comprando
+
+          <Link to="/checkout">
+            <button className="btn btn-primary my-3 mx-4" >
+              Terminar mi compra
             </button>
           </Link>
+
+          <Link to="/productos" className="btn btn-success mx-2 my-3">
+              Continuar comprando
+          </Link>
+
         </>
       )}
     </div>
