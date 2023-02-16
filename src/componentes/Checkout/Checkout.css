@@ -1,3 +1,7 @@
+.finCompra{
+    min-height: 57vh;
+}
+
 .errorMsj{
     color: red;
     font-weight: 600;

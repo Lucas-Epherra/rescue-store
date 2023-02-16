@@ -74,21 +74,19 @@ const Checkout = () => {
 
   if (orderId){
       return(
-        <div className="container my-5">
+        <div className="container my-5 finCompra">
           <h2>Tu compra ha sido exitosa</h2>
           <hr/>
+          <p>Muchas gracias por tu compra</p>
           <p><strong>Tu codigo de orden es :</strong> {orderId}</p>
-          <Link to="/">Volver al inicio</Link>
+          <Link to="/" className="btn btn-success">Volver al inicio</Link>
         </div>
       )
   }
 
-  if (cart.length === 0) {
-    <Navigate to="/" />;
-  }
-
-  return (
-    <div className="container my-5">
+  if (error.direccion === false || error.email === false || error.nombre === false){
+    return(
+      <div className="container my-5">
       <h2>Terminar mi compra</h2>
       <hr />
       <form onSubmit={handleSumbit}>
@@ -137,6 +135,54 @@ const Checkout = () => {
           ""
         )}
 
+        <button className="btn btn-primary mx-3 my-3">Enviar</button>
+      </form>
+      <Link to="/cart" className="btn btn-danger">
+        Volver al carrito
+      </Link>
+    </div>
+    )
+  }
+
+  if (cart.length === 0) {
+    <Navigate to="/" />;
+  }
+
+  return (
+    <div className="container my-5">
+      <h2>Terminar mi compra</h2>
+      <hr />
+      <form onSubmit={handleSumbit}>
+        <label>Nombre :</label>
+        <input
+          className="form-control my-2"
+          onChange={handleInputChange}
+          type="text"
+          name="nombre"
+          values={values.nombre}
+          placeholder="Tu nombre"
+        />
+        
+        <label>Direccion :</label>
+        <input
+          className="form-control my-2"
+          onChange={handleInputChange}
+          type="text"
+          name="direccion"
+          values={values.direccion}
+          placeholder="Tu direccion"
+        />
+      
+        <label>Email :</label>
+        <input
+          className="form-control my-2"
+          onChange={handleInputChange}
+          type="email"
+          name="email"
+          values={values.email}
+          placeholder="Tu email"
+        />
+      
         <button className="btn btn-primary mx-3 my-3">Enviar</button>
       </form>
       <Link to="/cart" className="btn btn-danger">
