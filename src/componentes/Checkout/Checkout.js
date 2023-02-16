@@ -2,9 +2,11 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link, Navigate } from "react-router-dom";
 import "./Checkout.css";
+import { db } from "../../firebase/config";
+import { collection, addDoc } from "firebase/firestore";
 
 const Checkout = () => {
-  const { cart, sumarTotalCart } = useContext(CartContext);
+  const { cart, sumarTotalCart, vaciarCart } = useContext(CartContext);
 
   const [values, setValues] = useState({
     nombre: "",
@@ -12,19 +14,21 @@ const Checkout = () => {
     email: "",
   });
 
+  const [orderId, setOrderId] = useState(null);
+
   const [error, setError] = useState({
     nombre: true,
     direccion: true,
     email: true,
   });
- 
+
   const handleInputChange = (e) => {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
   };
- 
+
   const handleSumbit = (e) => {
     e.preventDefault();
 
@@ -59,8 +63,25 @@ const Checkout = () => {
       total: sumarTotalCart(),
     };
 
-    console.log(orden);
-  }; 
+    const ordersRef = collection(db, "orders");
+    addDoc(ordersRef, orden)
+      .then((doc) => {
+        setOrderId(doc.id);
+        vaciarCart();
+      })
+      .catch((error) => console.log(error));
+  };
+
+  if (orderId){
+      return(
+        <div className="container my-5">
+          <h2>Tu compra ha sido exitosa</h2>
+          <hr/>
+          <p><strong>Tu codigo de orden es :</strong> {orderId}</p>
+          <Link to="/">Volver al inicio</Link>
+        </div>
+      )
+  }
 
   if (cart.length === 0) {
     <Navigate to="/" />;
