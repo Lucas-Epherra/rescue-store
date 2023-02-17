@@ -3,7 +3,15 @@ import { CartContext } from "../../context/CartContext";
 import { Link, Navigate } from "react-router-dom";
 import "./Checkout.css";
 import { db } from "../../firebase/config";
-import { collection, addDoc, updateDoc, getDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  where,
+  documentId,
+  getDocs,
+  writeBatch,
+  query,
+} from "firebase/firestore";
 
 const Checkout = () => {
   const { cart, sumarTotalCart, vaciarCart } = useContext(CartContext);
@@ -29,7 +37,7 @@ const Checkout = () => {
     });
   };
 
-  const handleSumbit = (e) => {
+  const handleSumbit = async (e) => {
     e.preventDefault();
 
     //validacion
@@ -55,42 +63,63 @@ const Checkout = () => {
       return;
     }
 
-    console.log(error);
-
     const orden = {
       cliente: values,
       items: cart,
       total: sumarTotalCart(),
     };
 
+    const batch = writeBatch(db);
     const ordersRef = collection(db, "orders");
     const productosRef = collection(db, "productos");
-    cart.forEach((prod) => {
-      const docRef = doc(productosRef, prod.id);
-      getDoc(docRef).then((doc) => {
-        if (doc.data().stock - prod.cantidad >= 0) {
-          updateDoc(docRef, { stock: doc.data().stock - prod.cantidad });
-        } else {
-          alert("No hay mas stock");
-        }
-      });
-   
+
+    const sinStock = [];
+
+    const itemsRef = query(
+      productosRef,
+      where(
+        documentId(),
+        "in",
+        cart.map((prod) => prod.id)
+      )
+    );
+
+    const productos = await getDocs(itemsRef);
+
+    productos.docs.forEach((doc) => {
+      const item = cart.find((item) => item.id === doc.id);
+
+      if (doc.data().stock >= item.cantidad) {
+        batch.update(doc.ref, {
+          stock: doc.data().stock - item.cantidad,
+        });
+      } else {
+        sinStock.push(item);
+      }
     });
 
-    addDoc(ordersRef, orden)
-      .then((doc) => {
-        setOrderId(doc.id);
-        vaciarCart();
-      })
-      .catch((error) => console.log(error));
+    if (sinStock.length === 0) {
+      batch.commit().then(() => {
+        addDoc(ordersRef, orden)
+          .then((doc) => {
+            setOrderId(doc.id);
+            vaciarCart();
+          })
+          .catch((error) => console.log(error));
+      });
+    } else {
+      alert("No hay mas stock");
+    }
   };
 
   if (orderId) {
     return (
       <div className="container my-5 finCompra">
-        <h2>Tu compra ha sido exitosa</h2>
+        <h2>Muchas gracias por tu compra</h2>
         <hr />
-        <p>Muchas gracias por tu compra</p>
+        <h3>Tu compra ha sido exitosa</h3>
+        <hr />
+
         <p>
           <strong>Tu codigo de orden es :</strong> {orderId}
         </p>
