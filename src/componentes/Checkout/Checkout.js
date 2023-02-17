@@ -43,21 +43,21 @@ const Checkout = () => {
 
     //validacion
 
-    if (values.nombre.length < 2) {
+    if (values.nombre.length < 2 || null ) {
       setError({
         nombre: false,
       });
       return;
     }
 
-    if (values.direccion.length < 2) {
+    if (values.direccion.length < 2 || null ) {
       setError({
         direccion: false,
       });
       return;
     }
 
-    if (values.email.length < 5) {
+    if (values.email.length < 5 || null ) {
       setError({
         email: false,
       });
