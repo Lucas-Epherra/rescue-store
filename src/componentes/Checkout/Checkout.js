@@ -12,6 +12,7 @@ import {
   writeBatch,
   query,
 } from "firebase/firestore";
+import swal from 'sweetalert';
 
 const Checkout = () => {
   const { cart, sumarTotalCart, vaciarCart } = useContext(CartContext);
@@ -107,17 +108,23 @@ const Checkout = () => {
           })
           .catch((error) => console.log(error));
       });
-    } else {
-      alert("No hay mas stock");
-    }
+    } else if (sinStock.length > 0) {
+      return swal({
+        title: "Error en la compra",
+        text: "Un producto del carrito no tiene stock!",
+        icon: "error",
+        button: "Volver",
+        dangerMode: true,
+      });
+    };
   };
 
   if (orderId) {
     return (
       <div className="container my-5 finCompra">
-        <h2>Muchas gracias por tu compra</h2>
+        <h2>Tu compra ha sido exitosa</h2>
         <hr />
-        <h3>Tu compra ha sido exitosa</h3>
+        <h3>Muchas gracias por tu compra</h3>
         <hr />
 
         <p>
@@ -233,7 +240,7 @@ const Checkout = () => {
           placeholder="Tu email"
         />
 
-        <button className="btn btn-primary mx-3 my-3">Enviar</button>
+        <button className="btn btn-primary my-3">Enviar</button>
       </form>
       <Link to="/cart" className="btn btn-danger">
         Volver al carrito

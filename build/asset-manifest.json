@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5070c67b.css",
-    "main.js": "/static/js/main.d828b423.js",
+    "main.js": "/static/js/main.b05d0ff2.js",
     "static/media/logo.png": "/static/media/logo.f1d1b01127183f5211ea.png",
     "static/media/guardavidas.jpg": "/static/media/guardavidas.a8939f885337a292ca93.jpg",
     "static/media/imagenTwo.jpg": "/static/media/imagenTwo.1b699a3f1e9a20de4bb5.jpg",
@@ -12,10 +12,10 @@
     "static/media/cart.svg": "/static/media/cart.ec34e04f278866298777c9836305a693.svg",
     "index.html": "/index.html",
     "main.5070c67b.css.map": "/static/css/main.5070c67b.css.map",
-    "main.d828b423.js.map": "/static/js/main.d828b423.js.map"
+    "main.b05d0ff2.js.map": "/static/js/main.b05d0ff2.js.map"
   },
   "entrypoints": [
     "static/css/main.5070c67b.css",
-    "static/js/main.d828b423.js"
+    "static/js/main.b05d0ff2.js"
   ]
 }
