@@ -8,7 +8,7 @@ const PublicRoutes = () => {
     <Routes>
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/register" element={<RegisterScreen />} />
-      <Route path="*" element={<Navigate to="/login" />} />
+      <Route path="*" element={<Navigate to="/" />} />
       <Route path="/" element={<Inicio />} />
       <Route path="/*" element={<Inicio />} />
       <Route path="/productos" element={<ItemListContainer />} />

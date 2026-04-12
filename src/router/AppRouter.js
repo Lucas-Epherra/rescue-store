@@ -24,7 +24,7 @@ const AppRouter = () => {
         <Route path="/productos/:categoryId" element={<ItemListContainer />} />
         <Route path="/detalle/:itemId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/" element={<LoginScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
 
         <Route
