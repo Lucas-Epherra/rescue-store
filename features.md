@@ -1,0 +1,1 @@
+// agregar una seccion de perfil , y alli podras ver , compras realizadas , compras en proceso , compras canceladas , datos de la cuenta , y algo mas que se me ocurra 

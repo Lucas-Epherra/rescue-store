@@ -50,7 +50,9 @@ function NavbarWidget() {
           <div className="logoutDiv d-flex align-items-center">
             {user?.email ? (
               <>
-                <span className="user me-2">Mi cuenta</span>
+                <Link className="links mx-2 btn btn-warning" to="/perfil">
+                  Mi cuenta
+                </Link>{" "}
                 <button
                   className="btn btn-danger logoutBtn"
                   onClick={handleLogout}

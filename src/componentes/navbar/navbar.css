@@ -3,6 +3,7 @@
     width: 100vw;
     background-color: red;
     align-items: center;
+    
 }
 .tituloNav {
     color: white;
@@ -17,15 +18,14 @@
     font-size: medium;
     height: fit-content;
     padding: 3px;
+    
 }
 
 .logoutDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(238, 255, 5);
-    padding: 3px;
-    border-radius: 15px;
+    gap:0.5rem;
 }
 
 .logoutBtn {
