@@ -8,18 +8,12 @@ import Footer from "../componentes/footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import Checkout from "../componentes/Checkout/Checkout";
 
-
 const PrivateRoutes = () => {
   return (
     <>
       <NavbarWidget />
 
       <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/*" element={<Inicio />} />
-        <Route path="/productos" element={<ItemListContainer />} />
-        <Route path="/productos/:categoryId" element={<ItemListContainer />} />
-        <Route path="/detalle/:itemId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
