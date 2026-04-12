@@ -1,5 +1,11 @@
 import { createContext, useState, useContext, useEffect } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth, provider } from "../firebase/config";
 
 export const LoginContext = createContext();
@@ -9,7 +15,6 @@ export const useLoginContext = () => {
 };
 
 export const LoginProvider = ({ children }) => {
-
   const [loading, setLoading] = useState(false);
 
   const [user, setUser] = useState({
@@ -21,14 +26,22 @@ export const LoginProvider = ({ children }) => {
   const login = (values) => {
     setLoading(true);
 
-    signInWithEmailAndPassword(auth, values.email, values.password)
+    return signInWithEmailAndPassword(auth, values.email, values.password)
+      .then((userCredential) => {
+        setUser({
+          email: userCredential.user.email,
+          logged: true,
+          mensaje: null,
+        });
+      })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         setUser({
           email: null,
           logged: false,
-          mensaje: error.message
-        })
+          mensaje: error.message,
+        });
+        throw error;
       })
       .finally(() => {
         setLoading(false);
@@ -36,58 +49,93 @@ export const LoginProvider = ({ children }) => {
   };
 
   const googleLogin = () => {
-    signInWithPopup(auth,provider)
-    .catch((error) => {
-      console.log(error)
-      setUser({
-        email: null,
-        logged: false,
-        mensaje: error.message
+    setLoading(true);
+
+    return signInWithPopup(auth, provider)
+      .then((result) => {
+        setUser({
+          email: result.user.email,
+          logged: true,
+          mensaje: null,
+        });
       })
-    })
-  }
+      .catch((error) => {
+        console.log(error);
+        setUser({
+          email: null,
+          logged: false,
+          mensaje: error.message,
+        });
+        throw error;
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
   const logout = () => {
-    signOut(auth)
+    return signOut(auth)
       .then(() => {
         setUser({
-          email:null,
-          logged:false,
-          mensaje:null
-        })
+          email: null,
+          logged: false,
+          mensaje: null,
+        });
       })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const register = (values) => {
     setLoading(true);
-    createUserWithEmailAndPassword(auth, values.email, values.password)
+
+    return createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((userCredential) => {
+        setUser({
+          email: userCredential.user.email,
+          logged: true,
+          mensaje: null,
+        });
+      })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         setUser({
           email: null,
           logged: false,
-          mensaje: error.message
+          mensaje: error.message,
         });
+        throw error;
       })
-      .finally(() => setLoading(false))
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
         setUser({
-          email: user.email,
-          logged:true,
-          mensaje:null
-        })
+          email: firebaseUser.email,
+          logged: true,
+          mensaje: null,
+        });
       } else {
-        logout()
+        setUser({
+          email: null,
+          logged: false,
+          mensaje: null,
+        });
       }
-    })
-  },[])
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
-    <LoginContext.Provider value={{ user, login, logout, loading, register, googleLogin }}>
+    <LoginContext.Provider
+      value={{ user, login, logout, loading, register, googleLogin }}
+    >
       {children}
     </LoginContext.Provider>
   );

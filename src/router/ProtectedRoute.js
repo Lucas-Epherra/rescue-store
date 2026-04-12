@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
-import { Navigate } from "react-router-dom";
-import { LoginContext } from "../context/LoginContext";
+import { Navigate, useLocation } from "react-router-dom";
+import { useLoginContext } from "../context/LoginContext";
 
 const ProtectedRoute = ({ children }) => {
-  const { user } = useContext(LoginContext);
+  const { user } = useLoginContext();
+  const location = useLocation();
 
-  return user.logged ? children : <Navigate to="/login" replace />;
+  if (!user?.email) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return children;
 };
 
 export default ProtectedRoute;
