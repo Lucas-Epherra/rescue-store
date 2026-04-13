@@ -7,45 +7,84 @@ import "./Cart.css";
 const Cart = () => {
   const { cart, vaciarCart, sumarTotalCart } = useContext(CartContext);
 
+  const totalFormateado = new Intl.NumberFormat("es-AR").format(
+    sumarTotalCart()
+  );
+
+  const totalItems = cart.reduce((acc, item) => acc + item.cantidad, 0);
+
   return (
-    <div className="cartBody container my-5">
+    <section className="cartPage container">
       {cart.length === 0 ? (
-        <>
-          <h2>Tu Carrio Esta Vacio</h2>
-          <hr />
-          <p>Agregue sus productos al carrito</p>
-          <Link to="/productos" className="btn btn-success mx-3 my-5">
+        <div className="emptyCart">
+          <span className="cartBadge">Carrito</span>
+          <h2 className="cartTitle">Tu carrito está vacío</h2>
+          <p className="cartText">
+            Todavía no agregaste productos. Explora el catálogo y equipa tu tienda
+            como corresponde.
+          </p>
+
+          <Link to="/productos" className="cartPrimaryBtn">
             Ver lista de productos
           </Link>
-        </>
+        </div>
       ) : (
         <>
-          <h2>Tu Carrito</h2>
-          <hr />
+          <div className="cartHeader">
+            <div>
+              <span className="cartBadge">Resumen de compra</span>
+              <h2 className="cartTitle">Tu carrito</h2>
+              <p className="cartText">
+                Revisa tus productos antes de avanzar al checkout.
+              </p>
+            </div>
 
-          {cart.map((item) => (
-            <ItemCart key={item.id} {...item} />
-          ))}
-
-          <h4>Total : ${sumarTotalCart()}</h4>
-
-          <button className="btn btn-danger my-3" onClick={vaciarCart}>
-            Vaciar Carrito
-          </button>
-
-          <Link to="/checkout">
-            <button className="btn btn-primary my-3 mx-4" >
-              Terminar mi compra
+            <button className="cartGhostBtn" onClick={vaciarCart}>
+              Vaciar carrito
             </button>
-          </Link>
+          </div>
 
-          <Link to="/productos" className="btn btn-success mx-2 my-3">
-              Continuar comprando
-          </Link>
+          <div className="cartLayout">
+            <div className="cartItemsPanel">
+              {cart.map((item) => (
+                <ItemCart key={item.id} {...item} />
+              ))}
+            </div>
 
+            <aside className="cartSummary">
+              <h3 className="summaryTitle">Resumen</h3>
+
+              <div className="summaryRow">
+                <span>Productos</span>
+                <strong>{totalItems}</strong>
+              </div>
+
+              <div className="summaryRow">
+                <span>Subtotal</span>
+                <strong>${totalFormateado}</strong>
+              </div>
+
+              <div className="summaryDivider" />
+
+              <div className="summaryRow totalRow">
+                <span>Total</span>
+                <strong>${totalFormateado}</strong>
+              </div>
+
+              <div className="summaryActions">
+                <Link to="/checkout" className="cartPrimaryBtn">
+                  Terminar mi compra
+                </Link>
+
+                <Link to="/productos" className="cartSecondaryBtn">
+                  Continuar comprando
+                </Link>
+              </div>
+            </aside>
+          </div>
         </>
       )}
-    </div>
+    </section>
   );
 };
 
