@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import CartWidget from "../CartWidget/CartWidget";
 import logo from "../../assets/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useLoginContext } from "../../context/LoginContext";
 
@@ -21,52 +21,70 @@ function NavbarWidget() {
   };
 
   return (
-    <Navbar className="navbar sticky-top">
-      <Container className="container">
-        <Link to="/">
-          <div className="d-flex">
-            <img
-              src={logo}
-              width="50"
-              height="50"
-              className="align-top rounded-5"
-              alt="Logo"
-            />
-            <p className="m-2 tituloNav">Rescue Store</p>
+    <Navbar expand="lg" className="navbarWidget sticky-top">
+      <Container className="navbarContainer">
+        <NavLink to="/" className="brandLink">
+          <div className="brandBox">
+            <img src={logo} className="brandLogo" alt="Logo Rescue Store" />
+            <div className="brandTextBox">
+              <p className="tituloNav">Rescue Store</p>
+              <span className="brandSubtitle">Equipamiento de rescate</span>
+            </div>
           </div>
-        </Link>
+        </NavLink>
 
-        <Nav className="btnBox d-flex flex-wrap align-items-center">
-          <Link className="links mx-2 btn btn-warning" to="/">
-            Inicio
-          </Link>
+        <Navbar.Toggle aria-controls="main-navbar" className="navbarToggle" />
 
-          <Link className="links mx-2 btn btn-warning" to="/productos">
-            Productos
-          </Link>
+        <Navbar.Collapse id="main-navbar">
+          <Nav className="navContent ms-auto">
+            <div className="navLinksGroup">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "navLinkCustom activeNav" : "navLinkCustom"
+                }
+              >
+                Inicio
+              </NavLink>
 
-          <CartWidget />
+              <NavLink
+                to="/productos"
+                className={({ isActive }) =>
+                  isActive ? "navLinkCustom activeNav" : "navLinkCustom"
+                }
+              >
+                Productos
+              </NavLink>
+            </div>
 
-          <div className="logoutDiv d-flex align-items-center">
-            {user?.email ? (
-              <>
-                <Link className="links mx-2 btn btn-warning" to="/perfil">
-                  Mi cuenta
-                </Link>{" "}
-                <button
-                  className="btn btn-danger logoutBtn"
-                  onClick={handleLogout}
-                >
-                  Cerrar sesión
-                </button>
-              </>
-            ) : (
-              <Link className="links mx-2 btn btn-warning" to="/login">
-                Iniciar sesión
-              </Link>
-            )}
-          </div>
-        </Nav>
+            <div className="navActions">
+              <div className="cartWrapper">
+                <CartWidget />
+              </div>
+
+              {user?.email ? (
+                <div className="sessionBox">
+                  <NavLink
+                    to="/perfil"
+                    className={({ isActive }) =>
+                      isActive ? "navLinkCustom activeNav" : "navLinkCustom"
+                    }
+                  >
+                    Mi cuenta
+                  </NavLink>
+
+                  <button className="logoutBtnCustom" onClick={handleLogout}>
+                    Cerrar sesión
+                  </button>
+                </div>
+              ) : (
+                <NavLink to="/login" className="loginBtnCustom">
+                  Iniciar sesión
+                </NavLink>
+              )}
+            </div>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
