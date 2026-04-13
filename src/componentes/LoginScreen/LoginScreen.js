@@ -47,47 +47,79 @@ const LoginScreen = () => {
   }
 
   return (
-    <div className="login-screen">
-      <div className="container formCont">
-        <h2 className="logText">Bienvenido a Rescue Store</h2>
+    <section className="login-screen">
+      <div className="formCont">
+        <div className="loginAside">
+          <span className="loginBadge">Rescue Store</span>
+          <h1 className="asideTitle">Tu equipo, listo para actuar.</h1>
+          <p className="asideText">
+            Inicia sesión para continuar con tu compra, revisar tu perfil y
+            acceder más rápido al checkout.
+          </p>
+          <div className="asideGlow" />
+        </div>
 
-        <form className="formBox" onSubmit={handleSubmit}>
-          <label>Email :</label>
-          <input
-            className="form-control my-2 inputs"
-            value={values.email}
-            type="email"
-            onChange={handleInputChange}
-            name="email"
-          />
+        <div className="formPanel">
+          <div className="formHeader">
+            <h2 className="logText">Iniciar sesión</h2>
+            <p className="formSubtext">
+              Accede con tu cuenta o continúa con Google.
+            </p>
+          </div>
 
-          <label>Contraseña :</label>
-          <input
-            className="form-control my-2 inputs"
-            value={values.password}
-            type="password"
-            onChange={handleInputChange}
-            name="password"
-          />
+          <form className="formBox" onSubmit={handleSubmit}>
+            <div className="fieldGroup">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                className="inputs"
+                value={values.email}
+                type="email"
+                onChange={handleInputChange}
+                name="email"
+                placeholder="tuemail@ejemplo.com"
+                autoComplete="email"
+              />
+            </div>
 
-          <button disabled={loading} className="btn btn-primary my-3">
-            Ingresar
-          </button>
+            <div className="fieldGroup">
+              <label htmlFor="password">Contraseña</label>
+              <input
+                id="password"
+                className="inputs"
+                value={values.password}
+                type="password"
+                onChange={handleInputChange}
+                name="password"
+                placeholder="••••••••"
+                autoComplete="current-password"
+              />
+            </div>
 
-          <button
-            type="button"
-            onClick={handleGoogleLogin}
-            className="btn btn-success my-3"
-          >
-            Ingresar con Google
-          </button>
+            <button disabled={loading} className="loginBtn" type="submit">
+              {loading ? "Ingresando..." : "Ingresar"}
+            </button>
 
-          <Link to="/register">Crear una cuenta</Link>
+            <button
+              type="button"
+              onClick={handleGoogleLogin}
+              className="googleBtn"
+            >
+              Ingresar con Google
+            </button>
 
-          {user?.mensaje && <p className="loginError">{user.mensaje}</p>}
-        </form>
+            <div className="bottomLinks">
+              <span className="bottomText">¿No tienes cuenta?</span>
+              <Link to="/register" className="registerLink">
+                Crear una cuenta
+              </Link>
+            </div>
+
+            {user?.mensaje && <p className="loginError">{user.mensaje}</p>}
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
