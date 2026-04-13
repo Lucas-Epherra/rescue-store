@@ -1,19 +1,53 @@
-.cart {
-    padding: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cartLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-.cart:hover {
-    padding: 3px;
-    background-color: red;
-    border: 2px solid rgba(0, 0, 0, 0.53);
-    border-radius: 15px;
+.cartIconBox {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+}
+
+.cartLink:hover .cartIconBox {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.cartIcon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
 .numProductos {
-    font-weight: 500;
-    color: black;
-    text-decoration:underline rgb(255, 0, 0);
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff6b3d, #ff844f);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(255, 107, 61, 0.3);
+  border: 2px solid rgba(7, 19, 29, 0.95);
 }
