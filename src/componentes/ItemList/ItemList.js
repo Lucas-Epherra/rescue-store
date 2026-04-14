@@ -1,34 +1,46 @@
-import './ItemList.css';
-import Item from '../Item/Item';
-import { Link } from 'react-router-dom';
+import "./ItemList.css";
+import Item from "../Item/Item";
+import { Link, useParams } from "react-router-dom";
 
 const ItemList = ({ productos }) => {
+  const { categoryId } = useParams();
 
-    return (
+  const categorias = [
+    { label: "Todos los productos", path: "/productos", value: null },
+    { label: "Silbatos", path: "/productos/silbatos", value: "silbatos" },
+    { label: "Flotabilidad", path: "/productos/flotabilidad", value: "flotabilidad" },
+    { label: "Gorros", path: "/productos/gorros", value: "gorros" },
+    { label: "Binoculares", path: "/productos/binoculares", value: "binoculares" },
+  ];
 
-        <div className="container">
-            <h2 className='title'>Nuestros Productos</h2>
-            <hr />
-            
-            <section className='categorias'>    
-                <Link className='mx-2 my-2 btn btn-warning' to={"/productos"}>Todos Los Productos</Link>
-                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/silbatos"}>Silbatos</Link>
-                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/flotabilidad"}>Flotabilidad</Link>
-                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/gorros"}>Gorros</Link>
-                <Link className='mx-2 my-2 btn btn-warning' to={"/productos/binoculares"}>Binoculares</Link>
-            </section>
+  return (
+    <div className="itemListWrapper">
+      <section className="categorias">
+        {categorias.map((categoria) => {
+          const isActive =
+            categoria.value === null
+              ? !categoryId
+              : categoryId === categoria.value;
 
-            <hr />
-            <section className="itemList">
-                {productos.map((prod) => <Item key={prod.id} prod={prod}/>)}
-            </section>
+          return (
+            <Link
+              key={categoria.path}
+              className={`categoryPill ${isActive ? "activeCategory" : ""}`}
+              to={categoria.path}
+            >
+              {categoria.label}
+            </Link>
+          );
+        })}
+      </section>
 
-        </div>
-
-                 
-    )
-
-
-}
+      <section className="itemListGrid">
+        {productos.map((prod) => (
+          <Item key={prod.id} prod={prod} />
+        ))}
+      </section>
+    </div>
+  );
+};
 
 export default ItemList;
