@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Rescue Store
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rescue Store es una aplicación de e-commerce desarrollada con **React** y **Firebase**, enfocada en la gestión de catálogo, autenticación de usuarios y flujo de compra completo.
 
-## Available Scripts
+El proyecto fue creado para practicar y consolidar habilidades de frontend moderno, trabajando sobre una experiencia de compra real con catálogo dinámico, carrito persistente, rutas protegidas y generación de órdenes en Firestore.
 
-In the project directory, you can run:
+## Live Demo
 
-### `npm start`
+**Demo:** https://rescue-store.netlify.app/  
+**Repository:** https://github.com/Lucas-Epherra/rescue-store
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Dynamic product catalog powered by **Firestore**
+- Category-based product filtering
+- Product detail view with stock-aware quantity selector
+- Global cart state handled with **Context API**
+- Cart persistence with **localStorage**
+- User authentication with **Firebase Auth**
+- Email/password login and **Google Sign-In**
+- Protected checkout flow for authenticated users
+- Redirect back to checkout after login
+- Order creation in **Firestore**
+- Automatic stock update after purchase
+- Responsive UI built with **React Bootstrap** and **Bootstrap**
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- React Router DOM
+- Firebase Authentication
+- Cloud Firestore
+- JavaScript
+- Bootstrap
+- React Bootstrap
+- React Icons
+- SweetAlert
+- CSS
 
-### `npm run build`
+## Project Goals
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project was built to strengthen practical frontend development skills through a complete application flow, including:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- component-based architecture
+- routing and protected routes
+- global state management
+- local persistence
+- authentication flows
+- database integration
+- purchase logic and stock handling
+- responsive interface design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Main Routes
 
-### `npm run eject`
+- `/` → Home
+- `/productos` → Product catalog
+- `/productos/:categoryId` → Products by category
+- `/detalle/:itemId` → Product detail
+- `/cart` → Shopping cart
+- `/login` → Login
+- `/register` → Register
+- `/checkout` → Protected checkout
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Local Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash 
+git clone https://github.com/Lucas-Epherra/rescue-store.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Enter the project folder:
 
-## Learn More
+cd rescue-store
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
 
-### Code Splitting
+Run the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+npm start
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Future Improvements
 
-### Making a Progressive Web App
+- User profile section
+- Purchase history
+- Better form validations
+- Improved error handling
+- Environment variables for Firebase config
+- Testing for core flows and components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Author
 
-### Advanced Configuration
+Lucas Epherra
+Frontend Developer focused on building modern, responsive and functional web interfaces.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub: https://github.com/Lucas-Epherra
+Portfolio: https://lucas-epherra.github.io/Portfolio/ 
