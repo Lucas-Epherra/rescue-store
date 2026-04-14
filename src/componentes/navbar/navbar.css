@@ -64,6 +64,7 @@
 
 .navbarCollapseCustom {
   margin-top: 0.25rem;
+  margin-left: 2.75rem;
 }
 
 .navContent {
@@ -71,7 +72,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .navLinksGroup,
@@ -155,12 +156,14 @@
 @media (max-width: 991px) {
   .navbarCollapseCustom {
     margin-top: 1rem;
+    margin-left: 0;
     padding: 1rem;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
+  
   .navContent {
     align-items: flex-start;
     gap: 1rem;

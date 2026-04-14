@@ -33,9 +33,12 @@ function NavbarWidget() {
           </div>
         </NavLink>
 
-        <Navbar.Toggle aria-controls="main-navbar" className="navbarToggle" />
+        <Navbar.Toggle
+          aria-controls="main-navbar"
+          className="navbarToggle"
+        />
 
-        <Navbar.Collapse id="main-navbar">
+        <Navbar.Collapse id="main-navbar" className="navbarCollapseCustom">
           <Nav className="navContent ms-auto">
             <div className="navLinksGroup">
               <NavLink
@@ -64,16 +67,11 @@ function NavbarWidget() {
 
               {user?.email ? (
                 <div className="sessionBox">
-                  <NavLink
-                    to="/perfil"
-                    className={({ isActive }) =>
-                      isActive ? "navLinkCustom activeNav" : "navLinkCustom"
-                    }
+                  <button
+                    type="button"
+                    className="logoutBtnCustom"
+                    onClick={handleLogout}
                   >
-                    Mi cuenta
-                  </NavLink>
-
-                  <button className="logoutBtnCustom" onClick={handleLogout}>
                     Cerrar sesión
                   </button>
                 </div>
