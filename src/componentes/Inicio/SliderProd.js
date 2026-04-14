@@ -3,7 +3,7 @@ import elementos from "../../assets/elementos.jpg";
 import fox402 from "../../assets/fox402.jpg";
 import guardavidas from "../../assets/guardavidas.jpg";
 import { Link } from "react-router-dom";
-import "./sliderProd.css";
+import "./SliderProd.css";
 
 const featuredSlides = [
   {

@@ -1,4 +1,4 @@
-import "./itemCount.css";
+import "./ItemCount.css";
 
 const ItemCount = ({ max, cantidad, setCantidad, onAdd }) => {
   const sinStock = max <= 0;

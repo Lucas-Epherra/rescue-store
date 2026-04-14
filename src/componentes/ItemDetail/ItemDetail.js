@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
-import "./itemDetail.css";
+import "./ItemDetail.css";
 
 const ItemDetail = ({
   id,

@@ -2,7 +2,7 @@ import Carousel from "react-bootstrap/Carousel";
 import imgOne from "../../assets/imagenOne.jpg";
 import imgTwo from "../../assets/imagenTwo.jpg";
 import imgThree from "../../assets/imagenThree.jpg";
-import "./inicio.css";
+import "./Inicio.css";
 import { Link } from "react-router-dom";
 import SliderProd from "./SliderProd";
 

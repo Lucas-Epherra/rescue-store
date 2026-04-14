@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import CartWidget from "../CartWidget/CartWidget";
 import logo from "../../assets/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
-import "./navbar.css";
+import "./Navbar.css";
 import { useLoginContext } from "../../context/LoginContext";
 
 function NavbarWidget() {

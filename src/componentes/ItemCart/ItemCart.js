@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { CartContext } from "../../context/CartContext";
-import "./itemCart.css";
+import "./ItemCart.css";
 
 const ItemCart = ({ id, name, marca, modelo, cantidad, imagen, precio }) => {
   const { removerItemCart } = useContext(CartContext);
