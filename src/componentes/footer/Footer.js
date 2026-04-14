@@ -8,7 +8,7 @@ function Footer() {
       <div className="footerContainer">
         <div className="footerBrand">
           <span className="footerBadge">Rescue Store</span>
-          <h3 className="footerTitle">Equipamiento de rescate con una interfaz más sólida</h3>
+          <h3 className="footerTitle">Equipamiento de rescate</h3>
           <p className="footerText">
             Proyecto frontend desarrollado por Lucas Epherra, enfocado en una
             experiencia moderna, clara y responsive.

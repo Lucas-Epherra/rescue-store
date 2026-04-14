@@ -35,33 +35,43 @@ const featuredSlides = [
 function SliderProd() {
   return (
     <section className="featuredSection">
-      <div className="featuredHeader">
-        <span className="featuredKicker">Categorías</span>
-        <h2 className="featuredTitle">Explora productos destacados</h2>
-        <p className="featuredText">
-          Una selección pensada para guardavidas, rescate y trabajo en entornos exigentes.
-        </p>
+      <div className="featuredContainer">
+        <div className="featuredHeader">
+          <span className="featuredKicker">Categorías</span>
+          <h2 className="featuredTitle">Explora productos destacados</h2>
+          <p className="featuredText">
+            Una selección pensada para guardavidas, rescate y trabajo en
+            entornos exigentes.
+          </p>
+        </div>
+
+        <Carousel
+          fade
+          className="sliderB"
+          indicators
+          controls
+          interval={4200}
+        >
+          {featuredSlides.map((slide, index) => (
+            <Carousel.Item key={index}>
+              <div className="slideMediaWrapper">
+                <img className="imgSliderB" src={slide.image} alt={slide.alt} />
+                <div className="slideOverlay" />
+              </div>
+
+              <Carousel.Caption className="bgTxt">
+                <span className="slideEyebrow">{slide.eyebrow}</span>
+                <h3 className="slideTitle">{slide.title}</h3>
+                <p className="slideText">{slide.text}</p>
+
+                <Link className="sliderBtn" to={slide.to}>
+                  Ver categoría
+                </Link>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       </div>
-
-      <Carousel fade className="sliderB" indicators controls interval={4200}>
-        {featuredSlides.map((slide, index) => (
-          <Carousel.Item key={index}>
-            <div className="slideMediaWrapper">
-              <img className="imgSliderB" src={slide.image} alt={slide.alt} />
-              <div className="slideOverlay" />
-            </div>
-
-            <Carousel.Caption className="bg-txt">
-              <span className="slideEyebrow">{slide.eyebrow}</span>
-              <h3>{slide.title}</h3>
-              <p>{slide.text}</p>
-              <Link className="sliderBtn" to={slide.to}>
-                Ver categoría
-              </Link>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
     </section>
   );
 }
