@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link, Navigate } from "react-router-dom";
 import "./Checkout.css";
@@ -12,240 +12,275 @@ import {
   writeBatch,
   query,
 } from "firebase/firestore";
-import swal from 'sweetalert';
+import swal from "sweetalert";
+
+const initialValues = {
+  nombre: "",
+  direccion: "",
+  email: "",
+};
 
 const Checkout = () => {
   const { cart, sumarTotalCart, vaciarCart } = useContext(CartContext);
 
-  const [values, setValues] = useState({
-    nombre: "",
-    direccion: "",
-    email: "",
-  });
-
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
   const [orderId, setOrderId] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [error, setError] = useState({
-    nombre: true,
-    direccion: true,
-    email: true,
-  });
+  const totalFormateado = useMemo(() => {
+    return new Intl.NumberFormat("es-AR").format(sumarTotalCart());
+  }, [sumarTotalCart]);
 
-  const handleInputChange = (e) => {
-    setValues({
-      ...values,
-      [e.target.name]: e.target.value,
-    });
+  const totalItems = useMemo(() => {
+    return cart.reduce((acc, item) => acc + item.cantidad, 0);
+  }, [cart]);
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (values.nombre.trim().length < 2) {
+      newErrors.nombre = "Ingresa un nombre válido.";
+    }
+
+    if (values.direccion.trim().length < 5) {
+      newErrors.direccion = "Ingresa una dirección válida.";
+    }
+
+    if (!/\S+@\S+\.\S+/.test(values.email.trim())) {
+      newErrors.email = "Ingresa un email válido.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
-  const handleSumbit = async (e) => {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setValues((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //validacion
+    if (!validateForm()) return;
 
-    if (values.nombre.length < 2 || null ) {
-      setError({
-        nombre: false,
+    setIsSubmitting(true);
+
+    try {
+      const orden = {
+        cliente: {
+          nombre: values.nombre.trim(),
+          direccion: values.direccion.trim(),
+          email: values.email.trim(),
+        },
+        items: cart,
+        total: sumarTotalCart(),
+      };
+
+      const batch = writeBatch(db);
+      const ordersRef = collection(db, "orders");
+      const productosRef = collection(db, "productos");
+
+      const sinStock = [];
+
+      const itemsRef = query(
+        productosRef,
+        where(
+          documentId(),
+          "in",
+          cart.map((prod) => prod.id)
+        )
+      );
+
+      const productos = await getDocs(itemsRef);
+
+      productos.docs.forEach((doc) => {
+        const item = cart.find((prod) => prod.id === doc.id);
+
+        if (!item) return;
+
+        if (doc.data().stock >= item.cantidad) {
+          batch.update(doc.ref, {
+            stock: doc.data().stock - item.cantidad,
+          });
+        } else {
+          sinStock.push(item);
+        }
       });
-      return;
-    }
 
-    if (values.direccion.length < 2 || null ) {
-      setError({
-        direccion: false,
-      });
-      return;
-    }
-
-    if (values.email.length < 5 || null ) {
-      setError({
-        email: false,
-      });
-      return;
-    }
-
-    const orden = {
-      cliente: values,
-      items: cart,
-      total: sumarTotalCart(),
-    };
-
-    const batch = writeBatch(db);
-    const ordersRef = collection(db, "orders");
-    const productosRef = collection(db, "productos");
-
-    const sinStock = [];
-
-    const itemsRef = query(
-      productosRef,
-      where(
-        documentId(),
-        "in",
-        cart.map((prod) => prod.id)
-      )
-    );
-
-    const productos = await getDocs(itemsRef);
-
-    productos.docs.forEach((doc) => {
-      const item = cart.find((item) => item.id === doc.id);
-
-      if (doc.data().stock >= item.cantidad) {
-        batch.update(doc.ref, {
-          stock: doc.data().stock - item.cantidad,
+      if (sinStock.length > 0) {
+        await swal({
+          title: "Error en la compra",
+          text: "Uno o más productos de tu carrito ya no tienen stock disponible.",
+          icon: "error",
+          button: "Volver",
+          dangerMode: true,
         });
-      } else {
-        sinStock.push(item);
-      }
-    });
 
-    if (sinStock.length === 0) {
-      batch.commit().then(() => {
-        addDoc(ordersRef, orden)
-          .then((doc) => {
-            setOrderId(doc.id);
-            vaciarCart();
-          })
-          .catch((error) => console.log(error));
-      });
-    } else if (sinStock.length > 0) {
-      return swal({
-        title: "Error en la compra",
-        text: "Un producto del carrito no tiene stock!",
+        setIsSubmitting(false);
+        return;
+      }
+
+      await batch.commit();
+      const doc = await addDoc(ordersRef, orden);
+
+      setOrderId(doc.id);
+      vaciarCart();
+      setValues(initialValues);
+    } catch (error) {
+      console.error(error);
+
+      await swal({
+        title: "Algo salió mal",
+        text: "No se pudo completar la compra. Intenta nuevamente.",
         icon: "error",
-        button: "Volver",
-        dangerMode: true,
+        button: "Entendido",
       });
-    };
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (orderId) {
     return (
-      <div className="container my-5 finCompra">
-        <h2>Tu compra ha sido exitosa</h2>
-        <hr />
-        <h3>Muchas gracias por tu compra</h3>
-        <hr />
+      <section className="checkoutPage">
+        <div className="checkoutContainer">
+          <div className="checkoutSuccessCard finCompra">
+            <span className="checkoutBadge">Compra confirmada</span>
+            <h2 className="checkoutTitle">Tu compra fue exitosa</h2>
+            <p className="checkoutText">
+              Gracias por tu compra. Tu pedido ya quedó registrado correctamente.
+            </p>
 
-        <p>
-          <strong>Tu codigo de orden es :</strong> {orderId}
-        </p>
-        <Link to="/" className="btn btn-success">
-          Volver al inicio
-        </Link>
-      </div>
-    );
-  }
+            <div className="successOrderBox">
+              <span className="successOrderLabel">Código de orden</span>
+              <strong className="successOrderId">{orderId}</strong>
+            </div>
 
-  if (
-    error.direccion === false ||
-    error.email === false ||
-    error.nombre === false
-  ) {
-    return (
-      <div className="container my-5">
-        <h2>Terminar mi compra</h2>
-        <hr />
-        <form onSubmit={handleSumbit}>
-          <label>Nombre :</label>
-          <input
-            className="form-control my-2"
-            onChange={handleInputChange}
-            type="text"
-            name="nombre"
-            values={values.nombre}
-            placeholder="Tu nombre"
-          />
-          {error.nombre === false ? (
-            <p className="errorMsj">Ha ocurrido un error, nombre invalido</p>
-          ) : (
-            ""
-          )}
-
-          <label>Direccion :</label>
-          <input
-            className="form-control my-2"
-            onChange={handleInputChange}
-            type="text"
-            name="direccion"
-            values={values.direccion}
-            placeholder="Tu direccion"
-          />
-          {error.direccion === false ? (
-            <p className="errorMsj">Ha ocurrido un error, direccion invalida</p>
-          ) : (
-            ""
-          )}
-
-          <label>Email :</label>
-          <input
-            className="form-control my-2"
-            onChange={handleInputChange}
-            type="email"
-            name="email"
-            values={values.email}
-            placeholder="Tu email"
-          />
-          {error.email === false ? (
-            <p className="errorMsj">Ha ocurrido un error, email invalido</p>
-          ) : (
-            ""
-          )}
-
-          <button className="btn btn-primary mx-3 my-3">Enviar</button>
-        </form>
-        <Link to="/cart" className="btn btn-danger">
-          Volver al carrito
-        </Link>
-      </div>
+            <Link to="/" className="checkoutPrimaryBtn">
+              Volver al inicio
+            </Link>
+          </div>
+        </div>
+      </section>
     );
   }
 
   if (cart.length === 0) {
-    <Navigate to="/" />;
+    return <Navigate to="/" />;
   }
 
   return (
-    <div className="container my-5">
-      <h2>Terminar mi compra</h2>
-      <hr />
-      <form onSubmit={handleSumbit}>
-        <label>Nombre :</label>
-        <input
-          className="form-control my-2"
-          onChange={handleInputChange}
-          type="text"
-          name="nombre"
-          values={values.nombre}
-          placeholder="Tu nombre"
-        />
+    <section className="checkoutPage">
+      <div className="checkoutContainer">
+        <div className="checkoutLayout">
+          <div className="checkoutFormCard">
+            <span className="checkoutBadge">Checkout</span>
+            <h2 className="checkoutTitle">Terminar mi compra</h2>
+            <p className="checkoutText">
+              Completa tus datos para finalizar el pedido de forma segura.
+            </p>
 
-        <label>Direccion :</label>
-        <input
-          className="form-control my-2"
-          onChange={handleInputChange}
-          type="text"
-          name="direccion"
-          values={values.direccion}
-          placeholder="Tu direccion"
-        />
+            <form className="checkoutForm" onSubmit={handleSubmit} noValidate>
+              <div className="checkoutField">
+                <label htmlFor="nombre" className="checkoutLabel">
+                  Nombre
+                </label>
+                <input
+                  id="nombre"
+                  className={`checkoutInput ${errors.nombre ? "inputError" : ""}`}
+                  onChange={handleInputChange}
+                  type="text"
+                  name="nombre"
+                  value={values.nombre}
+                  placeholder="Tu nombre"
+                />
+                {errors.nombre && <p className="errorMsj">{errors.nombre}</p>}
+              </div>
 
-        <label>Email :</label>
-        <input
-          className="form-control my-2"
-          onChange={handleInputChange}
-          type="email"
-          name="email"
-          values={values.email}
-          placeholder="Tu email"
-        />
+              <div className="checkoutField">
+                <label htmlFor="direccion" className="checkoutLabel">
+                  Dirección
+                </label>
+                <input
+                  id="direccion"
+                  className={`checkoutInput ${errors.direccion ? "inputError" : ""}`}
+                  onChange={handleInputChange}
+                  type="text"
+                  name="direccion"
+                  value={values.direccion}
+                  placeholder="Tu dirección"
+                />
+                {errors.direccion && (
+                  <p className="errorMsj">{errors.direccion}</p>
+                )}
+              </div>
 
-        <button className="btn btn-primary my-3">Enviar</button>
-      </form>
-      <Link to="/cart" className="btn btn-danger">
-        Volver al carrito
-      </Link>
-    </div>
+              <div className="checkoutField">
+                <label htmlFor="email" className="checkoutLabel">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  className={`checkoutInput ${errors.email ? "inputError" : ""}`}
+                  onChange={handleInputChange}
+                  type="email"
+                  name="email"
+                  value={values.email}
+                  placeholder="Tu email"
+                />
+                {errors.email && <p className="errorMsj">{errors.email}</p>}
+              </div>
+
+              <div className="checkoutActions">
+                <button
+                  type="submit"
+                  className="checkoutPrimaryBtn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Procesando compra..." : "Confirmar compra"}
+                </button>
+
+                <Link to="/cart" className="checkoutSecondaryBtn">
+                  Volver al carrito
+                </Link>
+              </div>
+            </form>
+          </div>
+
+          <aside className="checkoutSummaryCard">
+            <h3 className="summaryTitle">Resumen</h3>
+
+            <div className="summaryRow">
+              <span>Productos</span>
+              <strong>{totalItems}</strong>
+            </div>
+
+            <div className="summaryRow">
+              <span>Total</span>
+              <strong>${totalFormateado}</strong>
+            </div>
+
+            <div className="summaryDivider" />
+
+            <p className="summaryText">
+              Verifica tus datos antes de confirmar. Una vez generada la orden,
+              el stock se descuenta automáticamente.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
   );
 };
 
