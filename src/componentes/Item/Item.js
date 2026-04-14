@@ -1,24 +1,37 @@
-import './Item.css';
-import {Link} from 'react-router-dom'
+import "./Item.css";
+import { Link } from "react-router-dom";
 
+const Item = ({ prod }) => {
+  const { id, name, imagen, marca, modelo, precio, stock } = prod;
 
-const Item = ({prod}) => {
+  return (
+    <article className="prodCard">
+      <div className="itemImageWrap">
+        <img
+          className="imgProd"
+          src={imagen}
+          alt={`${marca ?? ""} ${modelo ?? name}`.trim()}
+        />
+      </div>
 
-    return (
+      <div className="itemInfo">
+        <span className="itemBrand">{marca}</span>
 
-        <div className='col-2 prodCard' >
+        <h4 className="titleCard">{name}</h4>
 
-            <h4 className="titleCard"> {prod.name}</h4>
-            <img className='imgProd' src={prod.imagen} alt={prod.marca + prod.modelo} />
-            <p>Valor: ${prod.precio}</p>
-            <p>En Stock: {prod.stock}</p>
-            <Link to={`/detalle/${prod.id}`}><button className='btn btn-danger m-4'>Ver Mas</button></Link>
-
+        <div className="itemMeta">
+          <p className="itemPrice">Valor: ${precio}</p>
+          <p className={`itemStock ${stock > 0 ? "inStock" : "outStock"}`}>
+            {stock > 0 ? `Stock disponible: ${stock}` : "Sin stock"}
+          </p>
         </div>
 
-    )
-}
-
-
+        <Link className="itemButton" to={`/detalle/${id}`}>
+          Ver más
+        </Link>
+      </div>
+    </article>
+  );
+};
 
 export default Item;

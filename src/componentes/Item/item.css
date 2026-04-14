@@ -1,23 +1,133 @@
-.imgProd {
-    width: 200px;
-    margin:1rem;
-    background-color: white;
-    border-radius: 15px;
-    padding: 1rem;
+.prodCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 1rem;
+  margin: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
 }
 
-.prodCard {
-    display: flex;
-    background-color: rgb(255, 234, 1);
-    border: solid black 1px;
-    border-radius: 15px;
-    flex-direction: column;
-    width: 200px;
-    align-items: center;
-    padding: 1rem;
-    margin: 10px;
+.prodCard:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+}
+
+.itemImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.imgProd {
+  width: 100%;
+  max-width: 220px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.itemBrand {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .titleCard {
-    text-align: center;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.itemMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.itemPrice {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.itemStock {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.inStock {
+  color: #b7f7c3;
+}
+
+.outStock {
+  color: #ffb3b3;
+}
+
+.itemButton {
+  margin-top: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.itemButton:hover {
+  transform: translateY(-2px);
+  opacity: 0.96;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+  .prodCard {
+    margin: 10px 0;
+  }
+
+  .itemImageWrap {
+    min-height: 190px;
+  }
+
+  .imgProd {
+    height: 160px;
+  }
 }
