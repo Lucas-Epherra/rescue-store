@@ -1,5 +1,16 @@
 .detailSection {
+  width: 100%;
+  min-height: calc(100vh - 88px);
   padding: 2rem 1rem 3rem;
+  background:
+    radial-gradient(circle at top left, rgba(89, 208, 234, 0.08), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 107, 61, 0.08), transparent 22%),
+    linear-gradient(180deg, #101820 0%, #131d27 100%);
+}
+
+.detailContainer {
+  width: min(1180px, 100%);
+  margin: 0 auto;
 }
 .detailCard {
   display: grid;
@@ -8,8 +19,7 @@
   align-items: stretch;
   padding: 1.4rem;
   border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+  background: rgba(19, 29, 39, 0.82);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
 }
@@ -152,7 +162,10 @@
   border-radius: 16px;
   font-size: 0.96rem;
   font-weight: 700;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
 }
 
 .goCartBtn {
@@ -171,6 +184,7 @@
   background: transparent;
   color: #f4f7fa;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 
 .backBtn:hover {
