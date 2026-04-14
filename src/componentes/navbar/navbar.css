@@ -9,7 +9,8 @@
 }
 
 .navbarContainer {
-  max-width: 1200px;
+  width: min(1200px, 100%);
+  margin: 0 auto;
 }
 
 .brandLink {
@@ -61,12 +62,16 @@
   box-shadow: none;
 }
 
+.navbarCollapseCustom {
+  margin-top: 0.25rem;
+}
+
 .navContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .navLinksGroup,
@@ -75,6 +80,14 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.navLinksGroup {
+  flex-wrap: wrap;
+}
+
+.navActions {
+  margin-left: auto;
 }
 
 .navLinkCustom {
@@ -139,11 +152,18 @@
   justify-content: center;
 }
 
-/* Responsive */
 @media (max-width: 991px) {
+  .navbarCollapseCustom {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
   .navContent {
     align-items: flex-start;
-    padding-top: 1rem;
+    gap: 1rem;
   }
 
   .navLinksGroup,

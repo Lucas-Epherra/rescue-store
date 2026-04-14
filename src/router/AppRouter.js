@@ -8,7 +8,7 @@ import Cart from "../componentes/Cart/Cart";
 import Checkout from "../componentes/Checkout/Checkout";
 import LoginScreen from "../componentes/LoginScreen/LoginScreen";
 import RegisterScreen from "../componentes/RegisterScreen/RegisterScreen";
-import NavbarWidget from "../componentes/navbar/NavarWidget";
+import NavbarWidget from "../componentes/navbar/NavbarWidget";
 import Footer from "../componentes/footer/Footer";
 
 import ProtectedRoute from "./ProtectedRoute";
