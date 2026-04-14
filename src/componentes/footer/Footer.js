@@ -1,14 +1,28 @@
-import './Footer.css'
+import "./Footer.css";
 
 function Footer() {
-    return (
-        <div className="footer">
-            <h3>Rescue Store</h3>
-                <p className='textFooter'>
-                    Sitio Web Desarrollado Por Lucas Epherra Web Developer 2022
-                </p>
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="footer">
+      <div className="footerContainer">
+        <div className="footerBrand">
+          <span className="footerBadge">Rescue Store</span>
+          <h3 className="footerTitle">Equipamiento de rescate con una interfaz más sólida</h3>
+          <p className="footerText">
+            Proyecto frontend desarrollado por Lucas Epherra, enfocado en una
+            experiencia moderna, clara y responsive.
+          </p>
         </div>
-    );
+
+        <div className="footerBottom">
+          <p className="footerCopy">
+            © {currentYear} Rescue Store · Desarrollado por Lucas Epherra
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
