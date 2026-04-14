@@ -8,22 +8,26 @@ const ItemCart = ({ id, name, marca, modelo, cantidad, imagen, precio }) => {
 
   const subtotal = new Intl.NumberFormat("es-AR").format(precio * cantidad);
   const precioUnitario = new Intl.NumberFormat("es-AR").format(precio);
+  const descripcion = `${marca ?? ""} ${modelo ?? ""}`.trim();
 
   return (
     <article className="cartItemCard">
       <div className="cartItemMedia">
         <div className="cartItemImgBox">
-          <img className="cartItemImg" src={imagen} alt={`${marca} ${modelo}`} />
+          <img
+            className="cartItemImg"
+            src={imagen}
+            alt={descripcion || name}
+          />
         </div>
       </div>
 
       <div className="cartItemInfo">
         <div className="cartItemTop">
-          <div>
+          <div className="cartItemHeading">
+            <span className="cartItemTag">Producto</span>
             <h3 className="cartItemTitle">{name}</h3>
-            <p className="cartItemMeta">
-              {marca} {modelo}
-            </p>
+            <p className="cartItemMeta">{descripcion}</p>
           </div>
 
           <button
