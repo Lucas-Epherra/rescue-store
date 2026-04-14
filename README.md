@@ -139,7 +139,7 @@ npm start
 
 ## Firebase Configuration
 
-# To run this project correctly, you need a valid Firebase setup with:
+ To run this project correctly, you need a valid Firebase setup with:
 
 - Firebase Authentication enabled
 - Cloud Firestore configured
