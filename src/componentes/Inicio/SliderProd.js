@@ -1,11 +1,10 @@
-import Carousel from "react-bootstrap/Carousel";
 import elementos from "../../assets/elementos.jpg";
 import fox402 from "../../assets/fox402.jpg";
 import guardavidas from "../../assets/guardavidas.jpg";
 import { Link } from "react-router-dom";
 import "./SliderProd.css";
 
-const featuredSlides = [
+const featuredCategories = [
   {
     image: elementos,
     alt: "Elementos de flote",
@@ -45,32 +44,30 @@ function SliderProd() {
           </p>
         </div>
 
-        <Carousel
-          fade
-          className="sliderB"
-          indicators
-          controls
-          interval={4200}
-        >
-          {featuredSlides.map((slide, index) => (
-            <Carousel.Item key={index}>
-              <div className="slideMediaWrapper">
-                <img className="imgSliderB" src={slide.image} alt={slide.alt} />
-                <div className="slideOverlay" />
+        <div className="featuredGrid">
+          {featuredCategories.map((category, index) => (
+            <article className="featuredCard" key={index}>
+              <div className="featuredCardMedia">
+                <img
+                  className="featuredCardImage"
+                  src={category.image}
+                  alt={category.alt}
+                />
+                <div className="featuredCardOverlay" />
               </div>
 
-              <Carousel.Caption className="bgTxt">
-                <span className="slideEyebrow">{slide.eyebrow}</span>
-                <h3 className="slideTitle">{slide.title}</h3>
-                <p className="slideText">{slide.text}</p>
+              <div className="featuredCardBody">
+                <span className="featuredCardEyebrow">{category.eyebrow}</span>
+                <h3 className="featuredCardTitle">{category.title}</h3>
+                <p className="featuredCardText">{category.text}</p>
 
-                <Link className="sliderBtn" to={slide.to}>
+                <Link className="featuredCardBtn" to={category.to}>
                   Ver categoría
                 </Link>
-              </Carousel.Caption>
-            </Carousel.Item>
+              </div>
+            </article>
           ))}
-        </Carousel>
+        </div>
       </div>
     </section>
   );
