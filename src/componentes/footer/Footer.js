@@ -18,7 +18,7 @@ function Footer() {
 
           <div className="footerBottom">
             <p className="footerCredit footerCopy">
-              © 2026 Rescue Store · Built by{" "}
+              © {currentYear} Rescue Store · Built by{" "}
               <a
                 href="https://lucas-epherra.github.io/Portfolio/"
                 target="_blank"
