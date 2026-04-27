@@ -3,25 +3,21 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: 1rem;
-  margin: 12px;
+  margin: 0;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
+    background 0.25s ease,
     border-color 0.25s ease,
-    background 0.25s ease;
-}
-
-.prodCard:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+    box-shadow 0.25s ease;
 }
 
 .itemImageWrap {
@@ -100,6 +96,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.9rem 1rem;
   border-radius: 14px;
   background: #ffffff;
@@ -107,20 +105,32 @@
   font-weight: 700;
   text-decoration: none;
   transition:
-    transform 0.2s ease,
     opacity 0.2s ease,
     box-shadow 0.2s ease;
 }
+@media (hover: hover) and (pointer: fine) {
+  .itemButton:hover {
+    transform: translateY(-2px);
+    opacity: 0.96;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  }
+}
 
-.itemButton:hover {
-  transform: translateY(-2px);
-  opacity: 0.96;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+@media (hover: hover) and (pointer: fine) {
+  .prodCard:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+  }
 }
 
 @media (max-width: 768px) {
   .prodCard {
-    margin: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
   }
 
   .itemImageWrap {
