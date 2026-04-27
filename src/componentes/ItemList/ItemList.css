@@ -2,12 +2,18 @@
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .categorias {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .categoryPill {
@@ -16,6 +22,8 @@
   justify-content: center;
   padding: 0.78rem 1rem;
   border-radius: 999px;
+  max-width: 100%;
+  box-sizing: border-box;
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 700;
@@ -55,6 +63,9 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
   align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 @media (max-width: 576px) {
@@ -63,11 +74,14 @@
   }
 
   .categoryPill {
+    box-sizing: border-box;
     width: 100%;
+    max-width: 100%;
+    flex: 0 1 100%;
     padding: 0.85rem 1rem;
   }
 
   .itemListGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

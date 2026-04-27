@@ -10,17 +10,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
   min-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background: #101820;
 }
 
-img {
+img,
+video,
+svg {
   max-width: 100%;
+  height: auto;
   display: block;
 }
